@@ -1,0 +1,9 @@
+person_id,name,role,is_director,is_kmp,din,pan,address,appointed_on,ceased_on,bank_account,ifsc
+D1,Ramesh Kumar Krishnan,Chairman and Managing Director,Y,Y,01234567,ABKPK4521M,"No 12, 4th Cross, Jayalakshmipuram, Mysuru 570012",2008-06-01,,00431000098765,CNRB0000431
+D2,Lakshmi Narayanan Iyer,Whole time Director,Y,Y,02345678,ACLPI3344D,"45, Kuvempunagar, Mysuru 570023",2011-04-01,,,
+D3,Arvind Shetty,Non executive Director,Y,N,03456789,AGHPS7012B,"8, Car Street, Udupi 576101",2014-09-15,,,
+D4,Meera Hegde,Independent Director,Y,N,04567890,AEMPH1188N,"22, Vinoba Road, Shivamogga 577201",2019-08-01,,,
+D5,Sanjay Gowda,Non executive Director,Y,N,05678901,AKPPG4410F,"3, Hassan Road, Hassan 573201",2016-01-10,2024-12-31,,
+D6,Farah Siddiqui,Independent Director,Y,N,06789012,BFSPS9087A,"17, Banjara Hills, Hyderabad 500034",2021-11-01,,,
+K1,Prakash Menon,Chief Financial Officer,N,Y,,AIXPM6620G,"B-204, Vijayanagar 2nd Stage, Mysuru 570017",2018-07-01,,50100234567812,HDFC0001234
+K2,Divya Rao,Company Secretary,N,Y,,BDRPR2290K,"9, Gokulam 3rd Stage, Mysuru 570002",2020-02-01,,,

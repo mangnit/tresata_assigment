@@ -1,0 +1,31 @@
+{
+  "name": "Kaveri Agro Limited",
+  "cin": "L01100KA2008PLC046512",
+  "pan": "AADCK4400R",
+  "listed": true,
+  "fy_start": "2025-04-01",
+  "fy_end": "2026-03-31",
+  "fy_label": "FY 2025-26",
+  "report_date": "2026-05-20",
+  "prev_fy_consolidated_turnover_paise": 1450000000000,
+  "prev_fy_standalone_turnover_paise": 1320000000000,
+  "prev_fy_net_worth_paise": 620000000000,
+  "group": [
+    {
+      "name": "Kaveri Foods Private Limited",
+      "pan": "AAGCK1010B",
+      "cin": "U15400KA2012PTC063311",
+      "relationship": "subsidiary",
+      "holding_pct": 76
+    },
+    {
+      "name": "Kaveri Exports Private Limited",
+      "pan": "AAGCK2020C",
+      "cin": "U51909KA2016PTC094422",
+      "relationship": "subsidiary",
+      "holding_pct": 100,
+      "accounts_consolidated": true
+    }
+  ],
+  "synthetic": true
+}

@@ -1,0 +1,16 @@
+--- page 1 ---
+FORM MBP-1
+Notice of interest by director
+[Pursuant to section 184(1) and rule 9(1)]
+To, The Board of Directors, Kaveri Agro Limited
+I, Arvind Shetty, being a director in the company, hereby give notice of my interest or concern in the
+following company or companies, bodies corporate, firms or other association of individuals:
+S.No | Name of the companies / bodies corporate / firms / association of individuals | Nature of interest or concern | Shareholding | Date on which interest arose
+1 | Tunga Agri Inputs Private Limited (PAN: AAECT9090J) | Director and member | 25% | 14-06-2016
+2 | Shetty and Sons (PAN: AAJFS4321K) | Partner | 40% | 01-04-2012
+Signature: sd/-   Name: Arvind Shetty   DIN: 03456789   Date: 02-04-2025   Place: Mysuru
+--- page 2 ---
+ANNEXURE: DECLARATION OF RELATIVES AND CLOSE FAMILY
+(for identification of related parties under Section 2(76), Section 2(77) and Ind AS 24)
+Name | Relationship to me | PAN | DIN
+Suresh Kumar Shetty | Brother | AMNPS2208Q | -

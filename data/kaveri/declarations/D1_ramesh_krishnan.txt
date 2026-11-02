@@ -1,0 +1,17 @@
+--- page 1 ---
+FORM MBP-1
+Notice of interest by director
+[Pursuant to section 184(1) and rule 9(1)]
+To, The Board of Directors, Kaveri Agro Limited
+I, Ramesh Kumar Krishnan, being a director in the company, hereby give notice of my interest or concern in the
+following company or companies, bodies corporate, firms or other association of individuals:
+S.No | Name of the companies / bodies corporate / firms / association of individuals | Nature of interest or concern | Shareholding | Date on which interest arose
+1 | Bhavani Holdings & Co (PAN: AAHFB2231C) | Partner | 60% | 01-04-2005
+Signature: sd/-   Name: Ramesh Kumar Krishnan   DIN: 01234567   Date: 02-04-2025   Place: Mysuru
+--- page 2 ---
+ANNEXURE: DECLARATION OF RELATIVES AND CLOSE FAMILY
+(for identification of related parties under Section 2(76), Section 2(77) and Ind AS 24)
+Name | Relationship to me | PAN | DIN
+Savitha Ramesh | Wife | AKVPR1102D | -
+Karthik Ramesh | Son | BKXPR7781L | 08456123
+Anjali Bhat | Daughter | CJAPB5521H | -

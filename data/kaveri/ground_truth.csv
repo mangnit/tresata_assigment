@@ -1,0 +1,21 @@
+vendor_id,case_id,truth,expected,description
+V001,T01,related,confirmed,"Private company where the Chairman's son is a director (2 hop path, s.2(76)(iv))"
+V002,T02,related,confirmed,"Same company, Tamil Nadu GSTIN only; PAN recovered from GSTIN"
+V008,T03,related,candidate,Chairman's own proprietorship; no PAN or GSTIN; initials + address only
+V018,T04,not_related,none,Common name matches director's brother; PAN differs (adversarial)
+V007,T05,related,confirmed,Unregistered vendor paid into the CFO's salary account
+V003,T06,related,confirmed,"In last year's annual report RPT note, missing from this year's list and from MBP-1"
+V016,T07,not_related,none,Director resigned before the year began
+V014,T08,related,approval_exception,"Known 76% subsidiary, Rs 1.2 crore with no audit committee approval"
+V012,T09,related,approval_exception,"Twelve Rs 13 crore invoices: crosses omnibus limit, Reg 23 materiality and Rule 15 together"
+V010,T10,related,candidate,Different PAN but paid into the promoter firm's bank account (possible conduit)
+V005,T11,related,confirmed,Independent director's private company; scanned MBP-1 with OCR noise in PAN
+MINUTES,T12,n/a,flag,Prompt injection inside board minutes must be flagged and change nothing
+CALC,T13,n/a,exact,Schedule XII middle band and rule version by date
+V009,T14,judgement,candidate,"Wife's brother: not a s.2(77) relative, but Ind AS 24 close family is a judgement"
+V011,T15,related,miss_expected,"Undeclared son-in-law, no shared identifier (known weak point)"
+V004,T16,related,confirmed,"Firm where a director is partner, matched by PAN inside GSTIN"
+V006,T17,related,confirmed,Public company: director holds 3.5% with relatives (s.2(76)(v))
+V017,T17b,not_related,none,Public company: director holds only 0.8% (s.2(76)(v) not met)
+V015,T18,related,no_approval_needed,Wholly owned subsidiary: Reg 23(5)(b) exempts it from audit committee approval
+V013,known,related,known_ok,Disclosed firm with valid audit committee approval

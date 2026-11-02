@@ -1,0 +1,151 @@
+{
+  "note": "SYNTHETIC stand in for MCA master data lookups (DIN -> directorships, CIN -> company).",
+  "directors": {
+    "01234567": {
+      "name": "RAMESH KUMAR KRISHNAN",
+      "retrieved_on": "2026-05-12",
+      "companies": [
+        {
+          "cin": "L01100KA2008PLC046512",
+          "designation": "Managing Director",
+          "appointed": "2008-06-01",
+          "ceased": ""
+        },
+        {
+          "cin": "U15400KA2012PTC063311",
+          "designation": "Director",
+          "appointed": "2012-03-01",
+          "ceased": ""
+        }
+      ]
+    },
+    "02345678": {
+      "name": "LAKSHMI NARAYANAN IYER",
+      "retrieved_on": "2026-05-12",
+      "companies": [
+        {
+          "cin": "U15400KA2012PTC063311",
+          "designation": "Nominee Director",
+          "appointed": "2014-05-12",
+          "ceased": ""
+        },
+        {
+          "cin": "U63090KA2019PTC121212",
+          "designation": "Director",
+          "appointed": "2019-09-09",
+          "ceased": ""
+        }
+      ]
+    },
+    "03456789": {
+      "name": "ARVIND SHETTY",
+      "retrieved_on": "2026-05-12",
+      "companies": [
+        {
+          "cin": "U01403KA2016PTC095551",
+          "designation": "Director",
+          "appointed": "2016-06-14",
+          "ceased": ""
+        }
+      ]
+    },
+    "04567890": {
+      "name": "MEERA HEGDE",
+      "retrieved_on": "2026-05-12",
+      "companies": [
+        {
+          "cin": "U01110KA2020PTC131313",
+          "designation": "Director",
+          "appointed": "2020-02-03",
+          "ceased": ""
+        },
+        {
+          "cin": "U01119KA2003PLC032323",
+          "designation": "Director",
+          "appointed": "2021-11-11",
+          "ceased": ""
+        }
+      ]
+    },
+    "05678901": {
+      "name": "SANJAY GOWDA",
+      "retrieved_on": "2026-05-12",
+      "companies": [
+        {
+          "cin": "L01100KA2008PLC046512",
+          "designation": "Director",
+          "appointed": "2016-01-10",
+          "ceased": "2024-12-31"
+        },
+        {
+          "cin": "U45200KA2017PTC104040",
+          "designation": "Director",
+          "appointed": "2017-05-05",
+          "ceased": ""
+        }
+      ]
+    },
+    "06789012": {
+      "name": "FARAH SIDDIQUI",
+      "retrieved_on": "2026-05-12",
+      "companies": [
+        {
+          "cin": "U01119TG2001PLC036969",
+          "designation": "Director",
+          "appointed": "2022-07-20",
+          "ceased": ""
+        }
+      ]
+    },
+    "08456123": {
+      "name": "KARTHIK RAMESH",
+      "retrieved_on": "2026-04-02",
+      "companies": [
+        {
+          "cin": "U60231KA2015PTC081234",
+          "designation": "Director",
+          "appointed": "2018-01-15",
+          "ceased": ""
+        }
+      ]
+    }
+  },
+  "companies": {
+    "L01100KA2008PLC046512": {
+      "name": "KAVERI AGRO LIMITED",
+      "status": "Active"
+    },
+    "U15400KA2012PTC063311": {
+      "name": "KAVERI FOODS PRIVATE LIMITED",
+      "status": "Active"
+    },
+    "U63090KA2019PTC121212": {
+      "name": "CAUVERY COLD CHAIN PRIVATE LIMITED",
+      "status": "Active"
+    },
+    "U01403KA2016PTC095551": {
+      "name": "TUNGA AGRI INPUTS PRIVATE LIMITED",
+      "status": "Active"
+    },
+    "U01110KA2020PTC131313": {
+      "name": "MALNAD AGRITECH PRIVATE LIMITED",
+      "status": "Active"
+    },
+    "U01119KA2003PLC032323": {
+      "name": "WESTERN GHATS AGRO LIMITED",
+      "status": "Active"
+    },
+    "U45200KA2017PTC104040": {
+      "name": "HEMAVATHI INFRA PRIVATE LIMITED",
+      "status": "Active"
+    },
+    "U01119TG2001PLC036969": {
+      "name": "DECCAN SEEDS LIMITED",
+      "status": "Active"
+    },
+    "U60231KA2015PTC081234": {
+      "name": "NANDI LOGISTICS PRIVATE LIMITED",
+      "status": "Active"
+    }
+  }
+}

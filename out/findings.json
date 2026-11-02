@@ -1,0 +1,5297 @@
+{
+  "client": "Kaveri Agro Limited",
+  "period": "FY 2025-26",
+  "report_date": "2026-05-20",
+  "synthetic_data": true,
+  "model": "none (offline: Tier 3 abstains, investigator scripted, memos templated)",
+  "rule_versions": {
+    "CA13_2_76_i": {
+      "citation": "Companies Act 2013 s.2(76)(i)",
+      "version": "1",
+      "effective_from": "2014-04-01"
+    },
+    "CA13_2_76_ii": {
+      "citation": "Companies Act 2013 s.2(76)(ii)",
+      "version": "1",
+      "effective_from": "2014-04-01"
+    },
+    "CA13_2_76_iii": {
+      "citation": "Companies Act 2013 s.2(76)(iii)",
+      "version": "1",
+      "effective_from": "2014-04-01"
+    },
+    "CA13_2_76_iv": {
+      "citation": "Companies Act 2013 s.2(76)(iv)",
+      "version": "1",
+      "effective_from": "2014-04-01"
+    },
+    "CA13_2_76_v": {
+      "citation": "Companies Act 2013 s.2(76)(v)",
+      "version": "1",
+      "effective_from": "2014-04-01"
+    },
+    "CA13_2_76_viii": {
+      "citation": "Companies Act 2013 s.2(76)(viii)",
+      "version": "1",
+      "effective_from": "2014-04-01"
+    },
+    "INDAS24_P9_CLOSE_FAMILY": {
+      "citation": "Ind AS 24 para 9",
+      "version": "1",
+      "effective_from": "2016-04-01"
+    },
+    "SA550_PRIOR_YEAR": {
+      "citation": "SA 550 (with prior year Ind AS 24 note)",
+      "version": "1",
+      "effective_from": "2016-04-01"
+    },
+    "LODR_2_1_ZC_CONDUIT": {
+      "citation": "SEBI LODR Reg 2(1)(zc)",
+      "version": "1",
+      "effective_from": "2022-04-01"
+    }
+  },
+  "input_hashes": {
+    "approvals.csv": "6a480ee0bb8cab3b",
+    "board_minutes_2025-08-12.txt": "8d2c558a34b129a8",
+    "company.json": "c686258f952c5835",
+    "ground_truth.csv": "5fa07800eb1d1d99",
+    "ledger.csv": "b8c8a6ded6b7bf97",
+    "management_rp_list.csv": "de81dd860e8814bf",
+    "prior_year_ar_note38.txt": "39c8f56a3a866616",
+    "register_directors_kmp.csv": "c59a70c9e2bd7d28",
+    "registry_snapshot.json": "f175cc92b53d9bdf",
+    "vendor_master.csv": "70afc86b1d108f04"
+  },
+  "coverage": {
+    "vendors_checked": 140,
+    "vendors_without_pan_or_gstin": 6
+  },
+  "findings": [
+    {
+      "vendor": "V001",
+      "vendor_name": "Nandi Logistics Pvt. Ltd.",
+      "rule": "CA13_2_76_iv",
+      "citation": "Companies Act 2013 s.2(76)(iv)",
+      "rule_text": "a private company in which a director or manager or his relative is a member or director",
+      "rule_version": "1",
+      "list_type": "closed",
+      "status": "confirmed",
+      "note": "director (son of a director)",
+      "anchor": "CIN:U60231KA2015PTC081234",
+      "anchor_name": "Nandi Logistics Private Limited",
+      "path": [
+        {
+          "kind": "same_entity",
+          "src": "V001",
+          "dst": "CIN:U60231KA2015PTC081234",
+          "tier": 1,
+          "method": "cname",
+          "score": 1.0,
+          "evidence": [
+            "E344"
+          ]
+        },
+        {
+          "kind": "registry_director_of",
+          "src": "DIN:08456123",
+          "dst": "CIN:U60231KA2015PTC081234",
+          "provenance": "registry",
+          "evidence": [
+            "E066"
+          ],
+          "designation": "Director",
+          "valid_from": "2018-01-15",
+          "valid_to": null
+        },
+        {
+          "kind": "same_entity",
+          "src": "DIN:08456123",
+          "dst": "REL:D1_ramesh_krishnan:2",
+          "tier": 1,
+          "method": "din",
+          "score": 1.0,
+          "evidence": [
+            "E329"
+          ]
+        },
+        {
+          "kind": "relative_of",
+          "src": "REL:D1_ramesh_krishnan:2",
+          "dst": "R:D1",
+          "provenance": "declaration",
+          "evidence": [
+            "E026"
+          ],
+          "relation": "son",
+          "relation_text": "Son"
+        },
+        {
+          "kind": "holds_office",
+          "src": "R:D1",
+          "dst": "C",
+          "provenance": "client_master",
+          "evidence": [
+            "E004"
+          ],
+          "role": "Chairman and Managing Director",
+          "is_director": true,
+          "is_kmp": true,
+          "valid_from": "2008-06-01",
+          "valid_to": null
+        }
+      ],
+      "evidence": [
+        "E344",
+        "E066",
+        "E329",
+        "E026",
+        "E004"
+      ],
+      "known_to_management": false,
+      "party_in_management_list": false,
+      "stale_evidence": [
+        "E066"
+      ],
+      "investigation": null,
+      "investigation_evidence": [],
+      "exception": "UNDISCLOSED_RELATED_PARTY",
+      "memo": "Vendor V001 (Nandi Logistics Pvt Ltd) was linked to Nandi Logistics Private Limited through 5 recorded steps [E344]. Source registry_snapshot.json shows: KARTHIK RAMESH: Director of NANDI LOGISTICS PRIVATE LIMITED from 2018-01-15 [E066]. Source D1_ramesh_krishnan.txt shows: Karthik Ramesh, Son, BKXPR7781L, 08456123 [E026]. Source register_directors_kmp.csv shows: Ramesh Kumar Krishnan, Chairman and Managing Director [E004]. Rule CA13_2_76_iv (Companies Act 2013 s.2(76)(iv)) applies with status CONFIRMED [E004].",
+      "memo_source": "template"
+    },
+    {
+      "vendor": "V002",
+      "vendor_name": "Nandi Logistics",
+      "rule": "CA13_2_76_iv",
+      "citation": "Companies Act 2013 s.2(76)(iv)",
+      "rule_text": "a private company in which a director or manager or his relative is a member or director",
+      "rule_version": "1",
+      "list_type": "closed",
+      "status": "confirmed",
+      "note": "director (son of a director)",
+      "anchor": "CIN:U60231KA2015PTC081234",
+      "anchor_name": "Nandi Logistics Private Limited",
+      "path": [
+        {
+          "kind": "same_entity",
+          "src": "V002",
+          "dst": "V001",
+          "tier": 1,
+          "method": "pan",
+          "score": 1.0,
+          "evidence": [
+            "E345"
+          ]
+        },
+        {
+          "kind": "same_entity",
+          "src": "V001",
+          "dst": "CIN:U60231KA2015PTC081234",
+          "tier": 1,
+          "method": "cname",
+          "score": 1.0,
+          "evidence": [
+            "E344"
+          ]
+        },
+        {
+          "kind": "registry_director_of",
+          "src": "DIN:08456123",
+          "dst": "CIN:U60231KA2015PTC081234",
+          "provenance": "registry",
+          "evidence": [
+            "E066"
+          ],
+          "designation": "Director",
+          "valid_from": "2018-01-15",
+          "valid_to": null
+        },
+        {
+          "kind": "same_entity",
+          "src": "DIN:08456123",
+          "dst": "REL:D1_ramesh_krishnan:2",
+          "tier": 1,
+          "method": "din",
+          "score": 1.0,
+          "evidence": [
+            "E329"
+          ]
+        },
+        {
+          "kind": "relative_of",
+          "src": "REL:D1_ramesh_krishnan:2",
+          "dst": "R:D1",
+          "provenance": "declaration",
+          "evidence": [
+            "E026"
+          ],
+          "relation": "son",
+          "relation_text": "Son"
+        },
+        {
+          "kind": "holds_office",
+          "src": "R:D1",
+          "dst": "C",
+          "provenance": "client_master",
+          "evidence": [
+            "E004"
+          ],
+          "role": "Chairman and Managing Director",
+          "is_director": true,
+          "is_kmp": true,
+          "valid_from": "2008-06-01",
+          "valid_to": null
+        }
+      ],
+      "evidence": [
+        "E345",
+        "E344",
+        "E066",
+        "E329",
+        "E026",
+        "E004"
+      ],
+      "known_to_management": false,
+      "party_in_management_list": false,
+      "stale_evidence": [
+        "E066"
+      ],
+      "investigation": null,
+      "investigation_evidence": [],
+      "exception": "UNDISCLOSED_RELATED_PARTY",
+      "memo": "Vendor V002 (Nandi Logistics) was linked to Nandi Logistics Private Limited through 6 recorded steps [E345]. Source registry_snapshot.json shows: KARTHIK RAMESH: Director of NANDI LOGISTICS PRIVATE LIMITED from 2018-01-15 [E066]. Source D1_ramesh_krishnan.txt shows: Karthik Ramesh, Son, BKXPR7781L, 08456123 [E026]. Source register_directors_kmp.csv shows: Ramesh Kumar Krishnan, Chairman and Managing Director [E004]. Rule CA13_2_76_iv (Companies Act 2013 s.2(76)(iv)) applies with status CONFIRMED [E004].",
+      "memo_source": "template"
+    },
+    {
+      "vendor": "V003",
+      "vendor_name": "Cauvery Cold Chain Pvt Ltd",
+      "rule": "CA13_2_76_iv",
+      "citation": "Companies Act 2013 s.2(76)(iv)",
+      "rule_text": "a private company in which a director or manager or his relative is a member or director",
+      "rule_version": "1",
+      "list_type": "closed",
+      "status": "confirmed",
+      "note": "director",
+      "anchor": "CIN:U63090KA2019PTC121212",
+      "anchor_name": "Cauvery Cold Chain Private Limited",
+      "path": [
+        {
+          "kind": "same_entity",
+          "src": "V003",
+          "dst": "CIN:U63090KA2019PTC121212",
+          "tier": 1,
+          "method": "cname",
+          "score": 1.0,
+          "evidence": [
+            "E340"
+          ]
+        },
+        {
+          "kind": "registry_director_of",
+          "src": "DIN:02345678",
+          "dst": "CIN:U63090KA2019PTC121212",
+          "provenance": "registry",
+          "evidence": [
+            "E054"
+          ],
+          "designation": "Director",
+          "valid_from": "2019-09-09",
+          "valid_to": null
+        },
+        {
+          "kind": "same_entity",
+          "src": "DIN:02345678",
+          "dst": "R:D2",
+          "tier": 1,
+          "method": "din",
+          "score": 1.0,
+          "evidence": [
+            "E258"
+          ]
+        },
+        {
+          "kind": "holds_office",
+          "src": "R:D2",
+          "dst": "C",
+          "provenance": "client_master",
+          "evidence": [
+            "E005"
+          ],
+          "role": "Whole time Director",
+          "is_director": true,
+          "is_kmp": true,
+          "valid_from": "2011-04-01",
+          "valid_to": null
+        }
+      ],
+      "evidence": [
+        "E340",
+        "E054",
+        "E258",
+        "E005"
+      ],
+      "known_to_management": false,
+      "party_in_management_list": false,
+      "stale_evidence": [],
+      "investigation": null,
+      "investigation_evidence": [],
+      "exception": "UNDISCLOSED_RELATED_PARTY",
+      "memo": "Vendor V003 (Cauvery Cold Chain Pvt Ltd) was linked to Cauvery Cold Chain Private Limited through 4 recorded steps [E340]. Source registry_snapshot.json shows: LAKSHMI NARAYANAN IYER: Director of CAUVERY COLD CHAIN PRIVATE LIMITED from 2019-09-09 [E054]. Source register_directors_kmp.csv shows: Lakshmi Narayanan Iyer, Whole time Director [E005]. Rule CA13_2_76_iv (Companies Act 2013 s.2(76)(iv)) applies with status CONFIRMED [E005].",
+      "memo_source": "template"
+    },
+    {
+      "vendor": "V004",
+      "vendor_name": "Shetty and Sons",
+      "rule": "CA13_2_76_iii",
+      "citation": "Companies Act 2013 s.2(76)(iii)",
+      "rule_text": "a firm in which a director, manager or his relative is a partner",
+      "rule_version": "1",
+      "list_type": "closed",
+      "status": "confirmed",
+      "note": "partner",
+      "anchor": "I:D3_arvind_shetty:2",
+      "anchor_name": "Shetty and Sons",
+      "path": [
+        {
+          "kind": "same_entity",
+          "src": "V004",
+          "dst": "I:D3_arvind_shetty:2",
+          "tier": 1,
+          "method": "pan",
+          "score": 1.0,
+          "evidence": [
+            "E331"
+          ]
+        },
+        {
+          "kind": "interest_in",
+          "src": "R:D3",
+          "dst": "I:D3_arvind_shetty:2",
+          "provenance": "declaration",
+          "evidence": [
+            "E032"
+          ],
+          "nature": "Partner",
+          "pct": 40.0
+        },
+        {
+          "kind": "holds_office",
+          "src": "R:D3",
+          "dst": "C",
+          "provenance": "client_master",
+          "evidence": [
+            "E006"
+          ],
+          "role": "Non executive Director",
+          "is_director": true,
+          "is_kmp": false,
+          "valid_from": "2014-09-15",
+          "valid_to": null
+        }
+      ],
+      "evidence": [
+        "E331",
+        "E032",
+        "E006"
+      ],
+      "known_to_management": false,
+      "party_in_management_list": false,
+      "stale_evidence": [],
+      "investigation": null,
+      "investigation_evidence": [],
+      "exception": "UNDISCLOSED_RELATED_PARTY",
+      "memo": "Vendor V004 (Shetty and Sons) was linked to Shetty and Sons through 3 recorded steps [E331]. Source D3_arvind_shetty.txt shows: 2, Shetty and Sons (PAN: AAJFS4321K), Partner, 40%, 01-04-2012 [E032]. Source register_directors_kmp.csv shows: Arvind Shetty, Non executive Director [E006]. Rule CA13_2_76_iii (Companies Act 2013 s.2(76)(iii)) applies with status CONFIRMED [E006].",
+      "memo_source": "template"
+    },
+    {
+      "vendor": "V005",
+      "vendor_name": "Malnad Agritech Pvt. Ltd.",
+      "rule": "CA13_2_76_iv",
+      "citation": "Companies Act 2013 s.2(76)(iv)",
+      "rule_text": "a private company in which a director or manager or his relative is a member or director",
+      "rule_version": "1",
+      "list_type": "closed",
+      "status": "confirmed",
+      "note": "director and member",
+      "anchor": "I:D4_meera_hegde_scan:1",
+      "anchor_name": "Malnad Agrltech Private Limited",
+      "path": [
+        {
+          "kind": "same_entity",
+          "src": "V005",
+          "dst": "I:D4_meera_hegde_scan:1",
+          "tier": 1,
+          "method": "pan",
+          "score": 1.0,
+          "evidence": [
+            "E332"
+          ]
+        },
+        {
+          "kind": "interest_in",
+          "src": "R:D4",
+          "dst": "I:D4_meera_hegde_scan:1",
+          "provenance": "declaration",
+          "evidence": [
+            "E034"
+          ],
+          "nature": "Director and member",
+          "pct": 15.0
+        },
+        {
+          "kind": "holds_office",
+          "src": "R:D4",
+          "dst": "C",
+          "provenance": "client_master",
+          "evidence": [
+            "E007"
+          ],
+          "role": "Independent Director",
+          "is_director": true,
+          "is_kmp": false,
+          "valid_from": "2019-08-01",
+          "valid_to": null
+        }
+      ],
+      "evidence": [
+        "E332",
+        "E034",
+        "E007"
+      ],
+      "known_to_management": false,
+      "party_in_management_list": false,
+      "stale_evidence": [],
+      "investigation": null,
+      "investigation_evidence": [],
+      "exception": "UNDISCLOSED_RELATED_PARTY",
+      "memo": "Vendor V005 (Malnad Agritech Pvt Ltd) was linked to Malnad Agrltech Private Limited through 3 recorded steps [E332]. Source D4_meera_hegde_scan.txt shows: 1, Malnad Agrltech Private Limited (PAN: AAICM5O1BQ), Director and member, 15%, 03-02-2020 [E034]. Source register_directors_kmp.csv shows: Meera Hegde, Independent Director [E007]. Rule CA13_2_76_iv (Companies Act 2013 s.2(76)(iv)) applies with status CONFIRMED [E007].",
+      "memo_source": "template"
+    },
+    {
+      "vendor": "V006",
+      "vendor_name": "Deccan Seeds Ltd.",
+      "rule": "CA13_2_76_v",
+      "citation": "Companies Act 2013 s.2(76)(v)",
+      "rule_text": "a public company in which a director or manager is a director and holds, along with his relatives, more than two per cent of its paid up share capital",
+      "rule_version": "1",
+      "list_type": "closed",
+      "status": "confirmed",
+      "note": "director holding 3.5% with relatives",
+      "anchor": "I:D6_farah_siddiqui:1",
+      "anchor_name": "Deccan Seeds Limited",
+      "path": [
+        {
+          "kind": "same_entity",
+          "src": "V006",
+          "dst": "I:D6_farah_siddiqui:1",
+          "tier": 1,
+          "method": "cname",
+          "score": 1.0,
+          "evidence": [
+            "E337"
+          ]
+        },
+        {
+          "kind": "interest_in",
+          "src": "R:D6",
+          "dst": "I:D6_farah_siddiqui:1",
+          "provenance": "declaration",
+          "evidence": [
+            "E037"
+          ],
+          "nature": "Director",
+          "pct": 3.5
+        },
+        {
+          "kind": "holds_office",
+          "src": "R:D6",
+          "dst": "C",
+          "provenance": "client_master",
+          "evidence": [
+            "E009"
+          ],
+          "role": "Independent Director",
+          "is_director": true,
+          "is_kmp": false,
+          "valid_from": "2021-11-01",
+          "valid_to": null
+        }
+      ],
+      "evidence": [
+        "E337",
+        "E037",
+        "E009"
+      ],
+      "known_to_management": false,
+      "party_in_management_list": false,
+      "stale_evidence": [],
+      "investigation": null,
+      "investigation_evidence": [],
+      "exception": "UNDISCLOSED_RELATED_PARTY",
+      "memo": "Vendor V006 (Deccan Seeds Ltd) was linked to Deccan Seeds Limited through 3 recorded steps [E337]. Source D6_farah_siddiqui.txt shows: 1, Deccan Seeds Limited, Director, 35% (together with relatives), 20-07-2022 [E037]. Source register_directors_kmp.csv shows: Farah Siddiqui, Independent Director [E009]. Rule CA13_2_76_v (Companies Act 2013 s.2(76)(v)) applies with status CONFIRMED [E009].",
+      "memo_source": "template"
+    },
+    {
+      "vendor": "V007",
+      "vendor_name": "SL Consultancy Services",
+      "rule": "CA13_2_76_ii",
+      "citation": "Companies Act 2013 s.2(76)(ii)",
+      "rule_text": "a key managerial personnel or his relative",
+      "rule_version": "1",
+      "list_type": "closed",
+      "status": "confirmed",
+      "note": "self",
+      "anchor": "R:K1",
+      "anchor_name": "Prakash Menon",
+      "path": [
+        {
+          "kind": "same_entity",
+          "src": "V007",
+          "dst": "R:K1",
+          "tier": 1,
+          "method": "bank",
+          "score": 1.0,
+          "evidence": [
+            "E294"
+          ]
+        },
+        {
+          "kind": "holds_office",
+          "src": "R:K1",
+          "dst": "C",
+          "provenance": "client_master",
+          "evidence": [
+            "E010"
+          ],
+          "role": "Chief Financial Officer",
+          "is_director": false,
+          "is_kmp": true,
+          "valid_from": "2018-07-01",
+          "valid_to": null
+        }
+      ],
+      "evidence": [
+        "E294",
+        "E010"
+      ],
+      "known_to_management": false,
+      "party_in_management_list": true,
+      "stale_evidence": [],
+      "investigation": null,
+      "investigation_evidence": [],
+      "exception": "TRANSACTIONS_WITH_LISTED_PARTY_UNDER_OTHER_NAME",
+      "memo": "Vendor V007 (SL Consultancy Services) was linked to Prakash Menon through 2 recorded steps [E294]. Source register_directors_kmp.csv shows: Prakash Menon, Chief Financial Officer [E010]. Rule CA13_2_76_ii (Companies Act 2013 s.2(76)(ii)) applies with status CONFIRMED [E010].",
+      "memo_source": "template"
+    },
+    {
+      "vendor": "V012",
+      "vendor_name": "Tunga Agri Inputs Pvt Ltd",
+      "rule": "CA13_2_76_iv",
+      "citation": "Companies Act 2013 s.2(76)(iv)",
+      "rule_text": "a private company in which a director or manager or his relative is a member or director",
+      "rule_version": "1",
+      "list_type": "closed",
+      "status": "confirmed",
+      "note": "director and member",
+      "anchor": "I:D3_arvind_shetty:1",
+      "anchor_name": "Tunga Agri Inputs Private Limited",
+      "path": [
+        {
+          "kind": "same_entity",
+          "src": "V012",
+          "dst": "I:D3_arvind_shetty:1",
+          "tier": 1,
+          "method": "pan",
+          "score": 1.0,
+          "evidence": [
+            "E317"
+          ]
+        },
+        {
+          "kind": "interest_in",
+          "src": "R:D3",
+          "dst": "I:D3_arvind_shetty:1",
+          "provenance": "declaration",
+          "evidence": [
+            "E031"
+          ],
+          "nature": "Director and member",
+          "pct": 25.0
+        },
+        {
+          "kind": "holds_office",
+          "src": "R:D3",
+          "dst": "C",
+          "provenance": "client_master",
+          "evidence": [
+            "E006"
+          ],
+          "role": "Non executive Director",
+          "is_director": true,
+          "is_kmp": false,
+          "valid_from": "2014-09-15",
+          "valid_to": null
+        }
+      ],
+      "evidence": [
+        "E317",
+        "E031",
+        "E006"
+      ],
+      "known_to_management": true,
+      "party_in_management_list": true,
+      "stale_evidence": [],
+      "investigation": null,
+      "investigation_evidence": [],
+      "exception": "KNOWN_RELATED_PARTY",
+      "memo": "Vendor V012 (Tunga Agri Inputs Pvt Ltd) was linked to Tunga Agri Inputs Private Limited through 3 recorded steps [E317]. Source D3_arvind_shetty.txt shows: 1, Tunga Agri Inputs Private Limited (PAN: AAECT9090J), Director and member, 25%, 14-06-2016 [E031]. Source register_directors_kmp.csv shows: Arvind Shetty, Non executive Director [E006]. Rule CA13_2_76_iv (Companies Act 2013 s.2(76)(iv)) applies with status CONFIRMED [E006].",
+      "memo_source": "template"
+    },
+    {
+      "vendor": "V013",
+      "vendor_name": "Bhavani Holdings and Company",
+      "rule": "CA13_2_76_iii",
+      "citation": "Companies Act 2013 s.2(76)(iii)",
+      "rule_text": "a firm in which a director, manager or his relative is a partner",
+      "rule_version": "1",
+      "list_type": "closed",
+      "status": "confirmed",
+      "note": "partner",
+      "anchor": "I:D1_ramesh_krishnan:1",
+      "anchor_name": "Bhavani Holdings & Co",
+      "path": [
+        {
+          "kind": "same_entity",
+          "src": "V013",
+          "dst": "I:D1_ramesh_krishnan:1",
+          "tier": 1,
+          "method": "pan",
+          "score": 1.0,
+          "evidence": [
+            "E313"
+          ]
+        },
+        {
+          "kind": "interest_in",
+          "src": "R:D1",
+          "dst": "I:D1_ramesh_krishnan:1",
+          "provenance": "declaration",
+          "evidence": [
+            "E024"
+          ],
+          "nature": "Partner",
+          "pct": 60.0
+        },
+        {
+          "kind": "holds_office",
+          "src": "R:D1",
+          "dst": "C",
+          "provenance": "client_master",
+          "evidence": [
+            "E004"
+          ],
+          "role": "Chairman and Managing Director",
+          "is_director": true,
+          "is_kmp": true,
+          "valid_from": "2008-06-01",
+          "valid_to": null
+        }
+      ],
+      "evidence": [
+        "E313",
+        "E024",
+        "E004"
+      ],
+      "known_to_management": true,
+      "party_in_management_list": true,
+      "stale_evidence": [],
+      "investigation": null,
+      "investigation_evidence": [],
+      "exception": "KNOWN_RELATED_PARTY",
+      "memo": "Vendor V013 (Bhavani Holdings and Company) was linked to Bhavani Holdings & Co through 3 recorded steps [E313]. Source D1_ramesh_krishnan.txt shows: 1, Bhavani Holdings & Co (PAN: AAHFB2231C), Partner, 60%, 01-04-2005 [E024]. Source register_directors_kmp.csv shows: Ramesh Kumar Krishnan, Chairman and Managing Director [E004]. Rule CA13_2_76_iii (Companies Act 2013 s.2(76)(iii)) applies with status CONFIRMED [E004].",
+      "memo_source": "template"
+    },
+    {
+      "vendor": "V014",
+      "vendor_name": "Kaveri Foods Pvt Ltd",
+      "rule": "CA13_2_76_viii",
+      "citation": "Companies Act 2013 s.2(76)(viii)",
+      "rule_text": "a holding, subsidiary or associate company",
+      "rule_version": "1",
+      "list_type": "closed",
+      "status": "confirmed",
+      "note": "subsidiary, 76%",
+      "anchor": "G:AAGCK1010B",
+      "anchor_name": "Kaveri Foods Private Limited",
+      "path": [
+        {
+          "kind": "same_entity",
+          "src": "V014",
+          "dst": "G:AAGCK1010B",
+          "tier": 1,
+          "method": "pan",
+          "score": 1.0,
+          "evidence": [
+            "E222"
+          ]
+        },
+        {
+          "kind": "group_entity",
+          "src": "G:AAGCK1010B",
+          "dst": "C",
+          "provenance": "client_master",
+          "evidence": [
+            "E002"
+          ],
+          "name": "Kaveri Foods Private Limited",
+          "pan": "AAGCK1010B",
+          "cin": "U15400KA2012PTC063311",
+          "relationship": "subsidiary",
+          "holding_pct": 76
+        }
+      ],
+      "evidence": [
+        "E222",
+        "E002"
+      ],
+      "known_to_management": true,
+      "party_in_management_list": true,
+      "stale_evidence": [],
+      "investigation": null,
+      "investigation_evidence": [],
+      "exception": "KNOWN_RELATED_PARTY",
+      "memo": "Vendor V014 (Kaveri Foods Pvt Ltd) was linked to Kaveri Foods Private Limited through 2 recorded steps [E222]. Source company.json shows: {\"name\": \"Kaveri Foods Private Limited\", \"pan\": \"AAGCK1010B\", \"cin\": \"U15400KA2012PTC063311\", \"relationship\": [E002]. Rule CA13_2_76_viii (Companies Act 2013 s.2(76)(viii)) applies with status CONFIRMED [E002].",
+      "memo_source": "template"
+    },
+    {
+      "vendor": "V014",
+      "vendor_name": "Kaveri Foods Pvt Ltd",
+      "rule": "CA13_2_76_iv",
+      "citation": "Companies Act 2013 s.2(76)(iv)",
+      "rule_text": "a private company in which a director or manager or his relative is a member or director",
+      "rule_version": "1",
+      "list_type": "closed",
+      "status": "confirmed",
+      "note": "nominee director",
+      "anchor": "I:D2_lakshmi_iyer:1",
+      "anchor_name": "Kaveri Foods Private Limited",
+      "path": [
+        {
+          "kind": "same_entity",
+          "src": "V014",
+          "dst": "I:D2_lakshmi_iyer:1",
+          "tier": 1,
+          "method": "cname",
+          "score": 1.0,
+          "evidence": [
+            "E236"
+          ]
+        },
+        {
+          "kind": "interest_in",
+          "src": "R:D2",
+          "dst": "I:D2_lakshmi_iyer:1",
+          "provenance": "declaration",
+          "evidence": [
+            "E028"
+          ],
+          "nature": "Nominee director",
+          "pct": null
+        },
+        {
+          "kind": "holds_office",
+          "src": "R:D2",
+          "dst": "C",
+          "provenance": "client_master",
+          "evidence": [
+            "E005"
+          ],
+          "role": "Whole time Director",
+          "is_director": true,
+          "is_kmp": true,
+          "valid_from": "2011-04-01",
+          "valid_to": null
+        }
+      ],
+      "evidence": [
+        "E236",
+        "E028",
+        "E005"
+      ],
+      "known_to_management": true,
+      "party_in_management_list": true,
+      "stale_evidence": [],
+      "investigation": null,
+      "investigation_evidence": [],
+      "exception": "KNOWN_RELATED_PARTY",
+      "memo": "Vendor V014 (Kaveri Foods Pvt Ltd) was linked to Kaveri Foods Private Limited through 3 recorded steps [E236]. Source D2_lakshmi_iyer.txt shows: 1, Kaveri Foods Private Limited, Nominee director, Nil, 12-05-2014 [E028]. Source register_directors_kmp.csv shows: Lakshmi Narayanan Iyer, Whole time Director [E005]. Rule CA13_2_76_iv (Companies Act 2013 s.2(76)(iv)) applies with status CONFIRMED [E005].",
+      "memo_source": "template"
+    },
+    {
+      "vendor": "V015",
+      "vendor_name": "Kaveri Exports Pvt Ltd",
+      "rule": "CA13_2_76_viii",
+      "citation": "Companies Act 2013 s.2(76)(viii)",
+      "rule_text": "a holding, subsidiary or associate company",
+      "rule_version": "1",
+      "list_type": "closed",
+      "status": "confirmed",
+      "note": "subsidiary, 100%",
+      "anchor": "G:AAGCK2020C",
+      "anchor_name": "Kaveri Exports Private Limited",
+      "path": [
+        {
+          "kind": "same_entity",
+          "src": "V015",
+          "dst": "G:AAGCK2020C",
+          "tier": 1,
+          "method": "pan",
+          "score": 1.0,
+          "evidence": [
+            "E241"
+          ]
+        },
+        {
+          "kind": "group_entity",
+          "src": "G:AAGCK2020C",
+          "dst": "C",
+          "provenance": "client_master",
+          "evidence": [
+            "E003"
+          ],
+          "name": "Kaveri Exports Private Limited",
+          "pan": "AAGCK2020C",
+          "cin": "U51909KA2016PTC094422",
+          "relationship": "subsidiary",
+          "holding_pct": 100,
+          "accounts_consolidated": true
+        }
+      ],
+      "evidence": [
+        "E241",
+        "E003"
+      ],
+      "known_to_management": true,
+      "party_in_management_list": true,
+      "stale_evidence": [],
+      "investigation": null,
+      "investigation_evidence": [],
+      "exception": "KNOWN_RELATED_PARTY",
+      "memo": "Vendor V015 (Kaveri Exports Pvt Ltd) was linked to Kaveri Exports Private Limited through 2 recorded steps [E241]. Source company.json shows: {\"name\": \"Kaveri Exports Private Limited\", \"pan\": \"AAGCK2020C\", \"cin\": \"U51909KA2016PTC094422\", \"relationship\" [E003]. Rule CA13_2_76_viii (Companies Act 2013 s.2(76)(viii)) applies with status CONFIRMED [E003].",
+      "memo_source": "template"
+    },
+    {
+      "vendor": "V003",
+      "vendor_name": "Cauvery Cold Chain Pvt Ltd",
+      "rule": "SA550_PRIOR_YEAR",
+      "citation": "SA 550 (with prior year Ind AS 24 note)",
+      "rule_text": "party disclosed as related in the prior year is missing from management's current list",
+      "rule_version": "1",
+      "list_type": "exception",
+      "status": "exception",
+      "note": "Enterprises over which KMP or their relatives have significant influence",
+      "anchor": "PY:14",
+      "anchor_name": "Cauvery Cold Chain Private Limited",
+      "path": [
+        {
+          "kind": "same_entity",
+          "src": "V003",
+          "dst": "PY:14",
+          "tier": 1,
+          "method": "cname",
+          "score": 1.0,
+          "evidence": [
+            "E341"
+          ]
+        },
+        {
+          "kind": "prior_year_rp",
+          "src": "PY:14",
+          "dst": "C",
+          "provenance": "prior_year_ar",
+          "evidence": [
+            "E080"
+          ],
+          "category": "Enterprises over which KMP or their relatives have significant influence"
+        }
+      ],
+      "evidence": [
+        "E341",
+        "E080"
+      ],
+      "known_to_management": false,
+      "party_in_management_list": false,
+      "stale_evidence": [],
+      "investigation": null,
+      "investigation_evidence": [],
+      "exception": "PRIOR_YEAR_PARTY_MISSING",
+      "memo": "Vendor V003 (Cauvery Cold Chain Pvt Ltd) was linked to Cauvery Cold Chain Private Limited through 2 recorded steps [E341]. Source prior_year_ar_note38.txt shows: Cauvery Cold Chain Private Limited [E080]. Rule SA550_PRIOR_YEAR (SA 550 (with prior year Ind AS 24 note)) applies with status EXCEPTION [E080].",
+      "memo_source": "template"
+    },
+    {
+      "vendor": "V008",
+      "vendor_name": "Sri K Ramesh Traders",
+      "rule": "CA13_2_76_i",
+      "citation": "Companies Act 2013 s.2(76)(i)",
+      "rule_text": "a director or his relative",
+      "rule_version": "1",
+      "list_type": "closed",
+      "status": "candidate",
+      "note": "self (weakest identity link: Tier 3)",
+      "anchor": "R:D1",
+      "anchor_name": "Ramesh Kumar Krishnan",
+      "path": [
+        {
+          "kind": "same_entity",
+          "src": "V008",
+          "dst": "R:D1",
+          "tier": 3,
+          "method": "gray_zone:cannot_tell",
+          "score": 0.867,
+          "evidence": [
+            "E348"
+          ],
+          "model_decision": "cannot_tell"
+        },
+        {
+          "kind": "holds_office",
+          "src": "R:D1",
+          "dst": "C",
+          "provenance": "client_master",
+          "evidence": [
+            "E004"
+          ],
+          "role": "Chairman and Managing Director",
+          "is_director": true,
+          "is_kmp": true,
+          "valid_from": "2008-06-01",
+          "valid_to": null
+        }
+      ],
+      "evidence": [
+        "E348",
+        "E004"
+      ],
+      "known_to_management": false,
+      "party_in_management_list": true,
+      "stale_evidence": [],
+      "investigation": {
+        "status": "corroborated",
+        "policy": "scripted (offline, no model)",
+        "tool_calls": 1,
+        "steps": [
+          {
+            "tool": "search_minutes",
+            "args": {
+              "query": "k ramesh"
+            },
+            "hits": 1
+          }
+        ]
+      },
+      "investigation_evidence": [
+        "E349"
+      ],
+      "exception": "CANDIDATE_RELATED_PARTY",
+      "memo": "Vendor V008 (Sri K Ramesh Traders) was linked to Ramesh Kumar Krishnan through 2 recorded steps [E348]. Source register_directors_kmp.csv shows: Ramesh Kumar Krishnan, Chairman and Managing Director [E004]. Rule CA13_2_76_i (Companies Act 2013 s.2(76)(i)) applies with status CANDIDATE [E004]. The investigator found supporting text in other records [E349].",
+      "memo_source": "template"
+    },
+    {
+      "vendor": "V009",
+      "vendor_name": "Rao Packaging Works",
+      "rule": "INDAS24_P9_CLOSE_FAMILY",
+      "citation": "Ind AS 24 para 9",
+      "rule_text": "close member of the family of KMP: those who may be expected to influence, or be influenced by, that person (list is inclusive, not exhaustive)",
+      "rule_version": "1",
+      "list_type": "judgement",
+      "status": "candidate",
+      "note": "relation 'Wife's brother' is not in Rule 4",
+      "anchor": "REL:D2_lakshmi_iyer:2",
+      "anchor_name": "Prakash Rao",
+      "path": [
+        {
+          "kind": "same_entity",
+          "src": "V009",
+          "dst": "REL:D2_lakshmi_iyer:2",
+          "tier": 1,
+          "method": "pan",
+          "score": 1.0,
+          "evidence": [
+            "E330"
+          ]
+        },
+        {
+          "kind": "relative_of",
+          "src": "REL:D2_lakshmi_iyer:2",
+          "dst": "R:D2",
+          "provenance": "declaration",
+          "evidence": [
+            "E030"
+          ],
+          "relation": "other:wife's brother",
+          "relation_text": "Wife's brother"
+        },
+        {
+          "kind": "holds_office",
+          "src": "R:D2",
+          "dst": "C",
+          "provenance": "client_master",
+          "evidence": [
+            "E005"
+          ],
+          "role": "Whole time Director",
+          "is_director": true,
+          "is_kmp": true,
+          "valid_from": "2011-04-01",
+          "valid_to": null
+        }
+      ],
+      "evidence": [
+        "E330",
+        "E030",
+        "E005"
+      ],
+      "known_to_management": false,
+      "party_in_management_list": false,
+      "stale_evidence": [],
+      "investigation": {
+        "status": "inconclusive",
+        "policy": "scripted (offline, no model)",
+        "tool_calls": 3,
+        "steps": [
+          {
+            "tool": "search_minutes",
+            "args": {
+              "query": "rao packaging"
+            },
+            "hits": 0
+          },
+          {
+            "tool": "search_declarations",
+            "args": {
+              "query": "rao packaging"
+            },
+            "hits": 0
+          },
+          {
+            "tool": "search_minutes",
+            "args": {
+              "query": "Lakshmi Narayanan Iyer"
+            },
+            "hits": 0
+          }
+        ]
+      },
+      "investigation_evidence": [],
+      "exception": "JUDGEMENT_IND_AS_24",
+      "memo": "Vendor V009 (Rao Packaging Works) was linked to Prakash Rao through 3 recorded steps [E330]. Source D2_lakshmi_iyer.txt shows: Prakash Rao, Wife's brother, AFRPR6610K, - [E030]. Source register_directors_kmp.csv shows: Lakshmi Narayanan Iyer, Whole time Director [E005]. Rule INDAS24_P9_CLOSE_FAMILY (Ind AS 24 para 9) applies with status CANDIDATE [E005].",
+      "memo_source": "template"
+    },
+    {
+      "vendor": "V010",
+      "vendor_name": "Swift Agri Supplies",
+      "rule": "LODR_2_1_ZC_CONDUIT",
+      "citation": "SEBI LODR Reg 2(1)(zc)",
+      "rule_text": "transaction with an unrelated party whose purpose and effect may be to benefit a related party",
+      "rule_version": "1",
+      "list_type": "red_flag",
+      "status": "red_flag",
+      "note": "shares bank with V013 (a related party) but has a different PAN",
+      "anchor": "V013",
+      "anchor_name": "Bhavani Holdings and Company",
+      "path": [
+        {
+          "kind": "shared_key_conflict",
+          "src": "V010",
+          "dst": "V013",
+          "provenance": "resolution",
+          "evidence": [
+            "E347"
+          ],
+          "key": "bank"
+        }
+      ],
+      "evidence": [
+        "E347"
+      ],
+      "known_to_management": false,
+      "party_in_management_list": false,
+      "stale_evidence": [],
+      "investigation": {
+        "status": "inconclusive",
+        "policy": "scripted (offline, no model)",
+        "tool_calls": 2,
+        "steps": [
+          {
+            "tool": "search_minutes",
+            "args": {
+              "query": "swift agri"
+            },
+            "hits": 0
+          },
+          {
+            "tool": "search_declarations",
+            "args": {
+              "query": "swift agri"
+            },
+            "hits": 0
+          }
+        ]
+      },
+      "investigation_evidence": [],
+      "exception": "RED_FLAG_POSSIBLE_CONDUIT",
+      "memo": "Vendor V010 (Swift Agri Supplies) was linked to Bhavani Holdings and Company through 1 recorded steps [E347]. Source computed by resolver shows: same bank but different PAN [E347]. Rule LODR_2_1_ZC_CONDUIT (SEBI LODR Reg 2(1)(zc)) applies with status RED_FLAG [E347].",
+      "memo_source": "template"
+    }
+  ],
+  "calculations": [
+    {
+      "vendors": [
+        "V001",
+        "V002"
+      ],
+      "party": "Nandi Logistics Private Limited",
+      "total": "Rs 4.70 crore",
+      "total_paise": 4700000000,
+      "count": 16,
+      "approvals_found": [],
+      "exceptions": [
+        {
+          "code": "AC_APPROVAL_MISSING",
+          "citation": "LODR Reg 23(2); Companies Act s.177(4)(iv)",
+          "detail": "16 transactions, Rs 4.70 crore, with no audit committee approval on record",
+          "on_date": "2025-04-16",
+          "amount_paise": 4700000000,
+          "formula": "sum of transactions in the year",
+          "needs_human": false
+        }
+      ]
+    },
+    {
+      "vendors": [
+        "V003"
+      ],
+      "party": "Cauvery Cold Chain Private Limited",
+      "total": "Rs 2.75 crore",
+      "total_paise": 2750000000,
+      "count": 5,
+      "approvals_found": [],
+      "exceptions": [
+        {
+          "code": "AC_APPROVAL_MISSING",
+          "citation": "LODR Reg 23(2); Companies Act s.177(4)(iv)",
+          "detail": "5 transactions, Rs 2.75 crore, with no audit committee approval on record",
+          "on_date": "2025-04-16",
+          "amount_paise": 2750000000,
+          "formula": "sum of transactions in the year",
+          "needs_human": false
+        }
+      ]
+    },
+    {
+      "vendors": [
+        "V004"
+      ],
+      "party": "Shetty and Sons",
+      "total": "Rs 90.00 lakh",
+      "total_paise": 900000000,
+      "count": 3,
+      "approvals_found": [],
+      "exceptions": [
+        {
+          "code": "AC_APPROVAL_MISSING",
+          "citation": "LODR Reg 23(2); Companies Act s.177(4)(iv)",
+          "detail": "3 transactions, Rs 90.00 lakh, with no audit committee approval on record",
+          "on_date": "2025-04-16",
+          "amount_paise": 900000000,
+          "formula": "sum of transactions in the year",
+          "needs_human": false
+        }
+      ]
+    },
+    {
+      "vendors": [
+        "V005"
+      ],
+      "party": "Malnad Agritech Private Limited",
+      "total": "Rs 2.10 crore",
+      "total_paise": 2100000000,
+      "count": 6,
+      "approvals_found": [],
+      "exceptions": [
+        {
+          "code": "AC_APPROVAL_MISSING",
+          "citation": "LODR Reg 23(2); Companies Act s.177(4)(iv)",
+          "detail": "6 transactions, Rs 2.10 crore, with no audit committee approval on record",
+          "on_date": "2025-04-16",
+          "amount_paise": 2100000000,
+          "formula": "sum of transactions in the year",
+          "needs_human": false
+        }
+      ]
+    },
+    {
+      "vendors": [
+        "V006"
+      ],
+      "party": "Deccan Seeds Limited",
+      "total": "Rs 8.40 crore",
+      "total_paise": 8400000000,
+      "count": 6,
+      "approvals_found": [],
+      "exceptions": [
+        {
+          "code": "AC_APPROVAL_MISSING",
+          "citation": "LODR Reg 23(2); Companies Act s.177(4)(iv)",
+          "detail": "6 transactions, Rs 8.40 crore, with no audit committee approval on record",
+          "on_date": "2025-04-16",
+          "amount_paise": 8400000000,
+          "formula": "sum of transactions in the year",
+          "needs_human": false
+        }
+      ]
+    },
+    {
+      "vendors": [
+        "V007"
+      ],
+      "party": "Prakash Menon",
+      "total": "Rs 18.00 lakh",
+      "total_paise": 180000000,
+      "count": 6,
+      "approvals_found": [],
+      "exceptions": [
+        {
+          "code": "AC_APPROVAL_MISSING",
+          "citation": "LODR Reg 23(2); Companies Act s.177(4)(iv)",
+          "detail": "6 transactions, Rs 18.00 lakh, with no audit committee approval on record",
+          "on_date": "2025-04-16",
+          "amount_paise": 180000000,
+          "formula": "sum of transactions in the year",
+          "needs_human": false
+        }
+      ]
+    },
+    {
+      "vendors": [
+        "V012"
+      ],
+      "party": "Tunga Agri Inputs Private Limited",
+      "total": "Rs 156.00 crore",
+      "total_paise": 156000000000,
+      "count": 12,
+      "approvals_found": [
+        "AC-2025-03-01"
+      ],
+      "exceptions": [
+        {
+          "code": "AC_LIMIT_EXCEEDED",
+          "citation": "LODR Reg 23(3) omnibus approval limit",
+          "detail": "cumulative Rs 104.00 crore passed the approved limit Rs 100.00 crore at T00102",
+          "on_date": "2025-11-20",
+          "amount_paise": 104000000000,
+          "formula": "running total vs approved limit",
+          "needs_human": false
+        },
+        {
+          "code": "SEC188_RULE15_THRESHOLD",
+          "citation": "Companies Act s.188(1) third proviso; Rule 15(3)",
+          "detail": "purchase_goods reached Rs 143.00 crore vs Rs 132.00 crore. Shareholder approval needed only if NOT in ordinary course or NOT at arm's length: needs auditor judgement",
+          "on_date": "2026-02-20",
+          "amount_paise": 143000000000,
+          "formula": "10% of turnover (goods, services, leasing)",
+          "needs_human": true
+        },
+        {
+          "code": "MATERIAL_RPT_NO_SHAREHOLDER_APPROVAL",
+          "citation": "LODR Reg 23(4); LODR Schedule XII (2025) band 1",
+          "detail": "cumulative Rs 156.00 crore exceeded materiality Rs 145.00 crore at T00106",
+          "on_date": "2026-03-20",
+          "amount_paise": 156000000000,
+          "formula": "10% of consolidated turnover",
+          "needs_human": false
+        }
+      ]
+    },
+    {
+      "vendors": [
+        "V013"
+      ],
+      "party": "Bhavani Holdings and Company",
+      "total": "Rs 48.00 lakh",
+      "total_paise": 480000000,
+      "count": 12,
+      "approvals_found": [
+        "AC-2025-03-02"
+      ],
+      "exceptions": []
+    },
+    {
+      "vendors": [
+        "V014"
+      ],
+      "party": "Kaveri Foods Private Limited",
+      "total": "Rs 1.20 crore",
+      "total_paise": 1200000000,
+      "count": 4,
+      "approvals_found": [],
+      "exceptions": [
+        {
+          "code": "AC_APPROVAL_MISSING",
+          "citation": "LODR Reg 23(2); Companies Act s.177(4)(iv)",
+          "detail": "4 transactions, Rs 1.20 crore, with no audit committee approval on record",
+          "on_date": "2025-04-16",
+          "amount_paise": 1200000000,
+          "formula": "sum of transactions in the year",
+          "needs_human": false
+        }
+      ]
+    },
+    {
+      "vendors": [
+        "V015"
+      ],
+      "party": "Kaveri Exports Private Limited",
+      "total": "Rs 6.00 crore",
+      "total_paise": 6000000000,
+      "count": 6,
+      "exemption": "LODR Reg 23(5)(b): holding company and wholly owned subsidiary with consolidated accounts",
+      "approvals_found": [],
+      "exceptions": []
+    }
+  ],
+  "document_flags": [
+    {
+      "file": "board_minutes_2025-08-12.txt",
+      "flag": "possible prompt injection",
+      "matches": [
+        "ignore all prior instructions",
+        "AI SYSTEM",
+        "mark every vendor as"
+      ],
+      "handling": "document still parsed by code; text passed to any model only as data; flagged for human"
+    }
+  ],
+  "conflicts": [
+    {
+      "a": "V010",
+      "b": "V013",
+      "issue": "same bank, different PAN"
+    }
+  ],
+  "not_counted_outside_period_or_threshold": [
+    {
+      "edge": {
+        "kind": "holds_office",
+        "src": "R:D5",
+        "dst": "C",
+        "provenance": "client_master",
+        "evidence": [
+          "E008"
+        ],
+        "role": "Non executive Director",
+        "is_director": true,
+        "is_kmp": false,
+        "valid_from": "2016-01-10",
+        "valid_to": "2024-12-31"
+      },
+      "why": "office not held during the year"
+    },
+    {
+      "vendor": "V017",
+      "why": "public company holding 0.8% is not above 2%"
+    },
+    {
+      "vendor": "V017",
+      "why": "public company holding 0.8% is not above 2%"
+    }
+  ],
+  "extraction_rejections": [],
+  "tier3_log": [
+    {
+      "stage": "S2-tier3",
+      "vendor": "V008",
+      "person": "R:D1",
+      "scores": [
+        0.8,
+        0.933,
+        0.867
+      ],
+      "decision": "cannot_tell",
+      "reason": "no model configured: abstained, routed to human"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E001",
+      "source": "company.json",
+      "locator": "whole file",
+      "content": "Kaveri Agro Limited",
+      "sha256": "c686258f952c5835",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E002",
+      "source": "company.json",
+      "locator": "group[Kaveri Foods Private Limited]",
+      "content": "{\"name\": \"Kaveri Foods Private Limited\", \"pan\": \"AAGCK1010B\", \"cin\": \"U15400KA2012PTC063311\", \"relationship\": \"subsidiary\", \"holding_pct\": 76}",
+      "sha256": "c686258f952c5835",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E003",
+      "source": "company.json",
+      "locator": "group[Kaveri Exports Private Limited]",
+      "content": "{\"name\": \"Kaveri Exports Private Limited\", \"pan\": \"AAGCK2020C\", \"cin\": \"U51909KA2016PTC094422\", \"relationship\": \"subsidiary\", \"holding_pct\": 100, \"accounts_consolidated\": true}",
+      "sha256": "c686258f952c5835",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E004",
+      "source": "register_directors_kmp.csv",
+      "locator": "row 2",
+      "content": "Ramesh Kumar Krishnan, Chairman and Managing Director",
+      "sha256": "c59a70c9e2bd7d28",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E005",
+      "source": "register_directors_kmp.csv",
+      "locator": "row 3",
+      "content": "Lakshmi Narayanan Iyer, Whole time Director",
+      "sha256": "c59a70c9e2bd7d28",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E006",
+      "source": "register_directors_kmp.csv",
+      "locator": "row 4",
+      "content": "Arvind Shetty, Non executive Director",
+      "sha256": "c59a70c9e2bd7d28",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E007",
+      "source": "register_directors_kmp.csv",
+      "locator": "row 5",
+      "content": "Meera Hegde, Independent Director",
+      "sha256": "c59a70c9e2bd7d28",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E008",
+      "source": "register_directors_kmp.csv",
+      "locator": "row 6",
+      "content": "Sanjay Gowda, Non executive Director",
+      "sha256": "c59a70c9e2bd7d28",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E009",
+      "source": "register_directors_kmp.csv",
+      "locator": "row 7",
+      "content": "Farah Siddiqui, Independent Director",
+      "sha256": "c59a70c9e2bd7d28",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E010",
+      "source": "register_directors_kmp.csv",
+      "locator": "row 8",
+      "content": "Prakash Menon, Chief Financial Officer",
+      "sha256": "c59a70c9e2bd7d28",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E011",
+      "source": "register_directors_kmp.csv",
+      "locator": "row 9",
+      "content": "Divya Rao, Company Secretary",
+      "sha256": "c59a70c9e2bd7d28",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E012",
+      "source": "management_rp_list.csv",
+      "locator": "row 2",
+      "content": "Kaveri Foods Private Limited: Subsidiary",
+      "sha256": "de81dd860e8814bf",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E013",
+      "source": "management_rp_list.csv",
+      "locator": "row 3",
+      "content": "Kaveri Exports Private Limited: Wholly owned subsidiary",
+      "sha256": "de81dd860e8814bf",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E014",
+      "source": "management_rp_list.csv",
+      "locator": "row 4",
+      "content": "Ramesh Kumar Krishnan: KMP: Chairman and MD",
+      "sha256": "de81dd860e8814bf",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E015",
+      "source": "management_rp_list.csv",
+      "locator": "row 5",
+      "content": "Lakshmi Narayanan Iyer: KMP: Whole time Director",
+      "sha256": "de81dd860e8814bf",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E016",
+      "source": "management_rp_list.csv",
+      "locator": "row 6",
+      "content": "Prakash Menon: KMP: CFO",
+      "sha256": "de81dd860e8814bf",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E017",
+      "source": "management_rp_list.csv",
+      "locator": "row 7",
+      "content": "Divya Rao: KMP: Company Secretary",
+      "sha256": "de81dd860e8814bf",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E018",
+      "source": "management_rp_list.csv",
+      "locator": "row 8",
+      "content": "Arvind Shetty: Non executive Director",
+      "sha256": "de81dd860e8814bf",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E019",
+      "source": "management_rp_list.csv",
+      "locator": "row 9",
+      "content": "Meera Hegde: Independent Director",
+      "sha256": "de81dd860e8814bf",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E020",
+      "source": "management_rp_list.csv",
+      "locator": "row 10",
+      "content": "Farah Siddiqui: Independent Director",
+      "sha256": "de81dd860e8814bf",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E021",
+      "source": "management_rp_list.csv",
+      "locator": "row 11",
+      "content": "Karthik Ramesh: Relative of KMP (son of Chairman)",
+      "sha256": "de81dd860e8814bf",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E022",
+      "source": "management_rp_list.csv",
+      "locator": "row 12",
+      "content": "Bhavani Holdings & Co: Firm in which Chairman is a partner",
+      "sha256": "de81dd860e8814bf",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E023",
+      "source": "management_rp_list.csv",
+      "locator": "row 13",
+      "content": "Tunga Agri Inputs Private Limited: Private company in which a director is a member",
+      "sha256": "de81dd860e8814bf",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E024",
+      "source": "D1_ramesh_krishnan.txt",
+      "locator": "page 1",
+      "content": "1 | Bhavani Holdings & Co (PAN: AAHFB2231C) | Partner | 60% | 01-04-2005",
+      "sha256": "9437159d336d46cd",
+      "kind": "declaration",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {
+        "span_check": "exact"
+      }
+    },
+    {
+      "id": "E025",
+      "source": "D1_ramesh_krishnan.txt",
+      "locator": "page 2",
+      "content": "Savitha Ramesh | Wife | AKVPR1102D | -",
+      "sha256": "9437159d336d46cd",
+      "kind": "declaration",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {
+        "span_check": "exact"
+      }
+    },
+    {
+      "id": "E026",
+      "source": "D1_ramesh_krishnan.txt",
+      "locator": "page 2",
+      "content": "Karthik Ramesh | Son | BKXPR7781L | 08456123",
+      "sha256": "9437159d336d46cd",
+      "kind": "declaration",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {
+        "span_check": "exact"
+      }
+    },
+    {
+      "id": "E027",
+      "source": "D1_ramesh_krishnan.txt",
+      "locator": "page 2",
+      "content": "Anjali Bhat | Daughter | CJAPB5521H | -",
+      "sha256": "9437159d336d46cd",
+      "kind": "declaration",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {
+        "span_check": "exact"
+      }
+    },
+    {
+      "id": "E028",
+      "source": "D2_lakshmi_iyer.txt",
+      "locator": "page 1",
+      "content": "1 | Kaveri Foods Private Limited | Nominee director | Nil | 12-05-2014",
+      "sha256": "c0e90f2d1b0ae6ff",
+      "kind": "declaration",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {
+        "span_check": "exact"
+      }
+    },
+    {
+      "id": "E029",
+      "source": "D2_lakshmi_iyer.txt",
+      "locator": "page 2",
+      "content": "Uma Iyer | Wife | ADUPI8873C | -",
+      "sha256": "c0e90f2d1b0ae6ff",
+      "kind": "declaration",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {
+        "span_check": "exact"
+      }
+    },
+    {
+      "id": "E030",
+      "source": "D2_lakshmi_iyer.txt",
+      "locator": "page 2",
+      "content": "Prakash Rao | Wife's brother | AFRPR6610K | -",
+      "sha256": "c0e90f2d1b0ae6ff",
+      "kind": "declaration",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {
+        "span_check": "exact"
+      }
+    },
+    {
+      "id": "E031",
+      "source": "D3_arvind_shetty.txt",
+      "locator": "page 1",
+      "content": "1 | Tunga Agri Inputs Private Limited (PAN: AAECT9090J) | Director and member | 25% | 14-06-2016",
+      "sha256": "14d47511f39c9c59",
+      "kind": "declaration",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {
+        "span_check": "exact"
+      }
+    },
+    {
+      "id": "E032",
+      "source": "D3_arvind_shetty.txt",
+      "locator": "page 1",
+      "content": "2 | Shetty and Sons (PAN: AAJFS4321K) | Partner | 40% | 01-04-2012",
+      "sha256": "14d47511f39c9c59",
+      "kind": "declaration",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {
+        "span_check": "exact"
+      }
+    },
+    {
+      "id": "E033",
+      "source": "D3_arvind_shetty.txt",
+      "locator": "page 2",
+      "content": "Suresh Kumar Shetty | Brother | AMNPS2208Q | -",
+      "sha256": "14d47511f39c9c59",
+      "kind": "declaration",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {
+        "span_check": "exact"
+      }
+    },
+    {
+      "id": "E034",
+      "source": "D4_meera_hegde_scan.txt",
+      "locator": "page 1",
+      "content": "1 | Malnad Agrltech Private Limited (PAN: AAICM5O1BQ) | Director and member | 15% | 03-02-2020",
+      "sha256": "55174fa51d1fe75f",
+      "kind": "declaration",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {
+        "span_check": "exact"
+      }
+    },
+    {
+      "id": "E035",
+      "source": "D4_meera_hegde_scan.txt",
+      "locator": "page 1",
+      "content": "2 | Western Ghats Agro Limited | Director | 0.8% | 11-11-2021",
+      "sha256": "55174fa51d1fe75f",
+      "kind": "declaration",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {
+        "span_check": "exact"
+      }
+    },
+    {
+      "id": "E036",
+      "source": "D4_meera_hegde_scan.txt",
+      "locator": "page 2",
+      "content": "Ravi Hegde | Husband | AERPH4471J | -",
+      "sha256": "55174fa51d1fe75f",
+      "kind": "declaration",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {
+        "span_check": "exact"
+      }
+    },
+    {
+      "id": "E037",
+      "source": "D6_farah_siddiqui.txt",
+      "locator": "page 1",
+      "content": "1 | Deccan Seeds Limited | Director | 3.5% (together with relatives) | 20-07-2022",
+      "sha256": "2a24ddb0d46b5c72",
+      "kind": "declaration",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {
+        "span_check": "exact"
+      }
+    },
+    {
+      "id": "E038",
+      "source": "D6_farah_siddiqui.txt",
+      "locator": "page 2",
+      "content": "Imran Siddiqui | Husband | AHKPS3390L | -",
+      "sha256": "2a24ddb0d46b5c72",
+      "kind": "declaration",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {
+        "span_check": "exact"
+      }
+    },
+    {
+      "id": "E039",
+      "source": "K1_prakash_menon.txt",
+      "locator": "page 1",
+      "content": "Lakshmi Menon | Wife | ALMPM7712Q | -",
+      "sha256": "1e1521df58912bef",
+      "kind": "declaration",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {
+        "span_check": "exact"
+      }
+    },
+    {
+      "id": "E040",
+      "source": "registry_snapshot.json",
+      "locator": "companies[L01100KA2008PLC046512]",
+      "content": "KAVERI AGRO LIMITED",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E041",
+      "source": "registry_snapshot.json",
+      "locator": "companies[U15400KA2012PTC063311]",
+      "content": "KAVERI FOODS PRIVATE LIMITED",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E042",
+      "source": "registry_snapshot.json",
+      "locator": "companies[U63090KA2019PTC121212]",
+      "content": "CAUVERY COLD CHAIN PRIVATE LIMITED",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E043",
+      "source": "registry_snapshot.json",
+      "locator": "companies[U01403KA2016PTC095551]",
+      "content": "TUNGA AGRI INPUTS PRIVATE LIMITED",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E044",
+      "source": "registry_snapshot.json",
+      "locator": "companies[U01110KA2020PTC131313]",
+      "content": "MALNAD AGRITECH PRIVATE LIMITED",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E045",
+      "source": "registry_snapshot.json",
+      "locator": "companies[U01119KA2003PLC032323]",
+      "content": "WESTERN GHATS AGRO LIMITED",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E046",
+      "source": "registry_snapshot.json",
+      "locator": "companies[U45200KA2017PTC104040]",
+      "content": "HEMAVATHI INFRA PRIVATE LIMITED",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E047",
+      "source": "registry_snapshot.json",
+      "locator": "companies[U01119TG2001PLC036969]",
+      "content": "DECCAN SEEDS LIMITED",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E048",
+      "source": "registry_snapshot.json",
+      "locator": "companies[U60231KA2015PTC081234]",
+      "content": "NANDI LOGISTICS PRIVATE LIMITED",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E049",
+      "source": "registry_snapshot.json",
+      "locator": "directors[01234567]",
+      "content": "RAMESH KUMAR KRISHNAN",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "2026-05-12",
+      "ttl_days": 30,
+      "extra": {}
+    },
+    {
+      "id": "E050",
+      "source": "registry_snapshot.json",
+      "locator": "directors[01234567] -> L01100KA2008PLC046512",
+      "content": "RAMESH KUMAR KRISHNAN: Managing Director of KAVERI AGRO LIMITED from 2008-06-01",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "2026-05-12",
+      "ttl_days": 30,
+      "extra": {}
+    },
+    {
+      "id": "E051",
+      "source": "registry_snapshot.json",
+      "locator": "directors[01234567] -> U15400KA2012PTC063311",
+      "content": "RAMESH KUMAR KRISHNAN: Director of KAVERI FOODS PRIVATE LIMITED from 2012-03-01",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "2026-05-12",
+      "ttl_days": 30,
+      "extra": {}
+    },
+    {
+      "id": "E052",
+      "source": "registry_snapshot.json",
+      "locator": "directors[02345678]",
+      "content": "LAKSHMI NARAYANAN IYER",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "2026-05-12",
+      "ttl_days": 30,
+      "extra": {}
+    },
+    {
+      "id": "E053",
+      "source": "registry_snapshot.json",
+      "locator": "directors[02345678] -> U15400KA2012PTC063311",
+      "content": "LAKSHMI NARAYANAN IYER: Nominee Director of KAVERI FOODS PRIVATE LIMITED from 2014-05-12",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "2026-05-12",
+      "ttl_days": 30,
+      "extra": {}
+    },
+    {
+      "id": "E054",
+      "source": "registry_snapshot.json",
+      "locator": "directors[02345678] -> U63090KA2019PTC121212",
+      "content": "LAKSHMI NARAYANAN IYER: Director of CAUVERY COLD CHAIN PRIVATE LIMITED from 2019-09-09",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "2026-05-12",
+      "ttl_days": 30,
+      "extra": {}
+    },
+    {
+      "id": "E055",
+      "source": "registry_snapshot.json",
+      "locator": "directors[03456789]",
+      "content": "ARVIND SHETTY",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "2026-05-12",
+      "ttl_days": 30,
+      "extra": {}
+    },
+    {
+      "id": "E056",
+      "source": "registry_snapshot.json",
+      "locator": "directors[03456789] -> U01403KA2016PTC095551",
+      "content": "ARVIND SHETTY: Director of TUNGA AGRI INPUTS PRIVATE LIMITED from 2016-06-14",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "2026-05-12",
+      "ttl_days": 30,
+      "extra": {}
+    },
+    {
+      "id": "E057",
+      "source": "registry_snapshot.json",
+      "locator": "directors[04567890]",
+      "content": "MEERA HEGDE",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "2026-05-12",
+      "ttl_days": 30,
+      "extra": {}
+    },
+    {
+      "id": "E058",
+      "source": "registry_snapshot.json",
+      "locator": "directors[04567890] -> U01110KA2020PTC131313",
+      "content": "MEERA HEGDE: Director of MALNAD AGRITECH PRIVATE LIMITED from 2020-02-03",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "2026-05-12",
+      "ttl_days": 30,
+      "extra": {}
+    },
+    {
+      "id": "E059",
+      "source": "registry_snapshot.json",
+      "locator": "directors[04567890] -> U01119KA2003PLC032323",
+      "content": "MEERA HEGDE: Director of WESTERN GHATS AGRO LIMITED from 2021-11-11",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "2026-05-12",
+      "ttl_days": 30,
+      "extra": {}
+    },
+    {
+      "id": "E060",
+      "source": "registry_snapshot.json",
+      "locator": "directors[05678901]",
+      "content": "SANJAY GOWDA",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "2026-05-12",
+      "ttl_days": 30,
+      "extra": {}
+    },
+    {
+      "id": "E061",
+      "source": "registry_snapshot.json",
+      "locator": "directors[05678901] -> L01100KA2008PLC046512",
+      "content": "SANJAY GOWDA: Director of KAVERI AGRO LIMITED from 2016-01-10 to 2024-12-31",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "2026-05-12",
+      "ttl_days": 30,
+      "extra": {}
+    },
+    {
+      "id": "E062",
+      "source": "registry_snapshot.json",
+      "locator": "directors[05678901] -> U45200KA2017PTC104040",
+      "content": "SANJAY GOWDA: Director of HEMAVATHI INFRA PRIVATE LIMITED from 2017-05-05",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "2026-05-12",
+      "ttl_days": 30,
+      "extra": {}
+    },
+    {
+      "id": "E063",
+      "source": "registry_snapshot.json",
+      "locator": "directors[06789012]",
+      "content": "FARAH SIDDIQUI",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "2026-05-12",
+      "ttl_days": 30,
+      "extra": {}
+    },
+    {
+      "id": "E064",
+      "source": "registry_snapshot.json",
+      "locator": "directors[06789012] -> U01119TG2001PLC036969",
+      "content": "FARAH SIDDIQUI: Director of DECCAN SEEDS LIMITED from 2022-07-20",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "2026-05-12",
+      "ttl_days": 30,
+      "extra": {}
+    },
+    {
+      "id": "E065",
+      "source": "registry_snapshot.json",
+      "locator": "directors[08456123]",
+      "content": "KARTHIK RAMESH",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "2026-04-02",
+      "ttl_days": 30,
+      "extra": {}
+    },
+    {
+      "id": "E066",
+      "source": "registry_snapshot.json",
+      "locator": "directors[08456123] -> U60231KA2015PTC081234",
+      "content": "KARTHIK RAMESH: Director of NANDI LOGISTICS PRIVATE LIMITED from 2018-01-15",
+      "sha256": "f175cc92b53d9bdf",
+      "kind": "registry",
+      "retrieved_on": "2026-04-02",
+      "ttl_days": 30,
+      "extra": {}
+    },
+    {
+      "id": "E067",
+      "source": "prior_year_ar_note38.txt",
+      "locator": "Note 38, Subsidiaries",
+      "content": "Kaveri Foods Private Limited",
+      "sha256": "39c8f56a3a866616",
+      "kind": "prior_year_ar",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E068",
+      "source": "prior_year_ar_note38.txt",
+      "locator": "Note 38, Subsidiaries",
+      "content": "Kaveri Exports Private Limited",
+      "sha256": "39c8f56a3a866616",
+      "kind": "prior_year_ar",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E069",
+      "source": "prior_year_ar_note38.txt",
+      "locator": "Note 38, Key management personnel",
+      "content": "Ramesh Kumar Krishnan",
+      "sha256": "39c8f56a3a866616",
+      "kind": "prior_year_ar",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E070",
+      "source": "prior_year_ar_note38.txt",
+      "locator": "Note 38, Key management personnel",
+      "content": "Lakshmi Narayanan Iyer",
+      "sha256": "39c8f56a3a866616",
+      "kind": "prior_year_ar",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E071",
+      "source": "prior_year_ar_note38.txt",
+      "locator": "Note 38, Key management personnel",
+      "content": "Prakash Menon",
+      "sha256": "39c8f56a3a866616",
+      "kind": "prior_year_ar",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E072",
+      "source": "prior_year_ar_note38.txt",
+      "locator": "Note 38, Key management personnel",
+      "content": "Divya Rao",
+      "sha256": "39c8f56a3a866616",
+      "kind": "prior_year_ar",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E073",
+      "source": "prior_year_ar_note38.txt",
+      "locator": "Note 38, Key management personnel",
+      "content": "Arvind Shetty",
+      "sha256": "39c8f56a3a866616",
+      "kind": "prior_year_ar",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E074",
+      "source": "prior_year_ar_note38.txt",
+      "locator": "Note 38, Key management personnel",
+      "content": "Meera Hegde",
+      "sha256": "39c8f56a3a866616",
+      "kind": "prior_year_ar",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E075",
+      "source": "prior_year_ar_note38.txt",
+      "locator": "Note 38, Key management personnel",
+      "content": "Sanjay Gowda",
+      "sha256": "39c8f56a3a866616",
+      "kind": "prior_year_ar",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E076",
+      "source": "prior_year_ar_note38.txt",
+      "locator": "Note 38, Key management personnel",
+      "content": "Farah Siddiqui",
+      "sha256": "39c8f56a3a866616",
+      "kind": "prior_year_ar",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E077",
+      "source": "prior_year_ar_note38.txt",
+      "locator": "Note 38, Relatives of key management personnel",
+      "content": "Karthik Ramesh",
+      "sha256": "39c8f56a3a866616",
+      "kind": "prior_year_ar",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E078",
+      "source": "prior_year_ar_note38.txt",
+      "locator": "Note 38, Enterprises over which KMP or their relatives have significant influence",
+      "content": "Bhavani Holdings & Co",
+      "sha256": "39c8f56a3a866616",
+      "kind": "prior_year_ar",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E079",
+      "source": "prior_year_ar_note38.txt",
+      "locator": "Note 38, Enterprises over which KMP or their relatives have significant influence",
+      "content": "Tunga Agri Inputs Private Limited",
+      "sha256": "39c8f56a3a866616",
+      "kind": "prior_year_ar",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E080",
+      "source": "prior_year_ar_note38.txt",
+      "locator": "Note 38, Enterprises over which KMP or their relatives have significant influence",
+      "content": "Cauvery Cold Chain Private Limited",
+      "sha256": "39c8f56a3a866616",
+      "kind": "prior_year_ar",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E081",
+      "source": "vendor_master.csv",
+      "locator": "row 2",
+      "content": "V001 Nandi Logistics Pvt. Ltd.",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E082",
+      "source": "vendor_master.csv",
+      "locator": "row 3",
+      "content": "V002 Nandi Logistics",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E083",
+      "source": "vendor_master.csv",
+      "locator": "row 4",
+      "content": "V003 Cauvery Cold Chain Pvt Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E084",
+      "source": "vendor_master.csv",
+      "locator": "row 5",
+      "content": "V004 Shetty and Sons",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E085",
+      "source": "vendor_master.csv",
+      "locator": "row 6",
+      "content": "V005 Malnad Agritech Pvt. Ltd.",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E086",
+      "source": "vendor_master.csv",
+      "locator": "row 7",
+      "content": "V006 Deccan Seeds Ltd.",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E087",
+      "source": "vendor_master.csv",
+      "locator": "row 8",
+      "content": "V007 SL Consultancy Services",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E088",
+      "source": "vendor_master.csv",
+      "locator": "row 9",
+      "content": "V008 Sri K Ramesh Traders",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E089",
+      "source": "vendor_master.csv",
+      "locator": "row 10",
+      "content": "V009 Rao Packaging Works",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E090",
+      "source": "vendor_master.csv",
+      "locator": "row 11",
+      "content": "V010 Swift Agri Supplies",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E091",
+      "source": "vendor_master.csv",
+      "locator": "row 12",
+      "content": "V011 Vinay Bhat Consulting",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E092",
+      "source": "vendor_master.csv",
+      "locator": "row 13",
+      "content": "V012 Tunga Agri Inputs Pvt Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E093",
+      "source": "vendor_master.csv",
+      "locator": "row 14",
+      "content": "V013 Bhavani Holdings and Company",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E094",
+      "source": "vendor_master.csv",
+      "locator": "row 15",
+      "content": "V014 Kaveri Foods Pvt Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E095",
+      "source": "vendor_master.csv",
+      "locator": "row 16",
+      "content": "V015 Kaveri Exports Pvt Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E096",
+      "source": "vendor_master.csv",
+      "locator": "row 17",
+      "content": "V016 Hemavathi Infra Pvt Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E097",
+      "source": "vendor_master.csv",
+      "locator": "row 18",
+      "content": "V017 Western Ghats Agro Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E098",
+      "source": "vendor_master.csv",
+      "locator": "row 19",
+      "content": "V018 Suresh Kumar Enterprises",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E099",
+      "source": "vendor_master.csv",
+      "locator": "row 20",
+      "content": "V019 Ramesh Stores",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E100",
+      "source": "vendor_master.csv",
+      "locator": "row 21",
+      "content": "V020 Lakshmi Traders",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E101",
+      "source": "vendor_master.csv",
+      "locator": "row 22",
+      "content": "V021 Nandi Transport Company",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E102",
+      "source": "vendor_master.csv",
+      "locator": "row 23",
+      "content": "V022 Cauvery Traders",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E103",
+      "source": "vendor_master.csv",
+      "locator": "row 24",
+      "content": "V023 Shetty Enterprises",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E104",
+      "source": "vendor_master.csv",
+      "locator": "row 25",
+      "content": "V024 Malnad Coffee Works",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E105",
+      "source": "vendor_master.csv",
+      "locator": "row 26",
+      "content": "V025 Kaveri Seeds Company",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E106",
+      "source": "vendor_master.csv",
+      "locator": "row 27",
+      "content": "V026 Rao Brothers",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E107",
+      "source": "vendor_master.csv",
+      "locator": "row 28",
+      "content": "V027 Iyer Packaging",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E108",
+      "source": "vendor_master.csv",
+      "locator": "row 29",
+      "content": "V028 Deccan Traders",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E109",
+      "source": "vendor_master.csv",
+      "locator": "row 30",
+      "content": "V029 Prakash Agencies",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E110",
+      "source": "vendor_master.csv",
+      "locator": "row 31",
+      "content": "V030 Karthik Enterprises",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E111",
+      "source": "vendor_master.csv",
+      "locator": "row 32",
+      "content": "V031 Anjali Traders",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E112",
+      "source": "vendor_master.csv",
+      "locator": "row 33",
+      "content": "V032 Sri Krishna Stores",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E113",
+      "source": "vendor_master.csv",
+      "locator": "row 34",
+      "content": "V033 Menon Logistics",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E114",
+      "source": "vendor_master.csv",
+      "locator": "row 35",
+      "content": "V034 Green Valley Enterprises Pvt Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E115",
+      "source": "vendor_master.csv",
+      "locator": "row 36",
+      "content": "V035 Venkateshwara Printers",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E116",
+      "source": "vendor_master.csv",
+      "locator": "row 37",
+      "content": "V036 Srirangapatna Tools",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E117",
+      "source": "vendor_master.csv",
+      "locator": "row 38",
+      "content": "V037 Shree Feeds",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E118",
+      "source": "vendor_master.csv",
+      "locator": "row 39",
+      "content": "V038 Coastal Engineering Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E119",
+      "source": "vendor_master.csv",
+      "locator": "row 40",
+      "content": "V039 Vijaya Chemicals Pvt Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E120",
+      "source": "vendor_master.csv",
+      "locator": "row 41",
+      "content": "V040 Southern Fertilisers",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E121",
+      "source": "vendor_master.csv",
+      "locator": "row 42",
+      "content": "V041 Southern Packaging Pvt Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E122",
+      "source": "vendor_master.csv",
+      "locator": "row 43",
+      "content": "V042 Southern Chemicals Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E123",
+      "source": "vendor_master.csv",
+      "locator": "row 44",
+      "content": "V043 Karnataka Traders",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E124",
+      "source": "vendor_master.csv",
+      "locator": "row 45",
+      "content": "V044 Coastal Logistics",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E125",
+      "source": "vendor_master.csv",
+      "locator": "row 46",
+      "content": "V045 Shree Pumps",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E126",
+      "source": "vendor_master.csv",
+      "locator": "row 47",
+      "content": "V046 Balaji Logistics",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E127",
+      "source": "vendor_master.csv",
+      "locator": "row 48",
+      "content": "V047 Srirangapatna Seeds",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E128",
+      "source": "vendor_master.csv",
+      "locator": "row 49",
+      "content": "V048 Coastal Irrigation",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E129",
+      "source": "vendor_master.csv",
+      "locator": "row 50",
+      "content": "V049 Chamundi Tools",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E130",
+      "source": "vendor_master.csv",
+      "locator": "row 51",
+      "content": "V050 Chamundi Cold Storage Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E131",
+      "source": "vendor_master.csv",
+      "locator": "row 52",
+      "content": "V051 Ganesh Cold Storage",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E132",
+      "source": "vendor_master.csv",
+      "locator": "row 53",
+      "content": "V052 Green Valley Tools",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E133",
+      "source": "vendor_master.csv",
+      "locator": "row 54",
+      "content": "V053 Venkateshwara Traders Pvt Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E134",
+      "source": "vendor_master.csv",
+      "locator": "row 55",
+      "content": "V054 Sri Packaging",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E135",
+      "source": "vendor_master.csv",
+      "locator": "row 56",
+      "content": "V055 Vijaya Feeds",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E136",
+      "source": "vendor_master.csv",
+      "locator": "row 57",
+      "content": "V056 Coastal Chemicals",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E137",
+      "source": "vendor_master.csv",
+      "locator": "row 58",
+      "content": "V057 Srirangapatna Transport",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E138",
+      "source": "vendor_master.csv",
+      "locator": "row 59",
+      "content": "V058 Green Valley Polymers",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E139",
+      "source": "vendor_master.csv",
+      "locator": "row 60",
+      "content": "V059 Sahyadri Agro",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E140",
+      "source": "vendor_master.csv",
+      "locator": "row 61",
+      "content": "V060 Annapurna Engineering Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E141",
+      "source": "vendor_master.csv",
+      "locator": "row 62",
+      "content": "V061 Shree Irrigation Pvt Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E142",
+      "source": "vendor_master.csv",
+      "locator": "row 63",
+      "content": "V062 Sahyadri Packaging",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E143",
+      "source": "vendor_master.csv",
+      "locator": "row 64",
+      "content": "V063 Green Valley Agro",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E144",
+      "source": "vendor_master.csv",
+      "locator": "row 65",
+      "content": "V064 Green Valley Seeds",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E145",
+      "source": "vendor_master.csv",
+      "locator": "row 66",
+      "content": "V065 Annapurna Cold Storage Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E146",
+      "source": "vendor_master.csv",
+      "locator": "row 67",
+      "content": "V066 Sahyadri Tools Pvt Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E147",
+      "source": "vendor_master.csv",
+      "locator": "row 68",
+      "content": "V067 New Enterprises",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E148",
+      "source": "vendor_master.csv",
+      "locator": "row 69",
+      "content": "V068 Venkateshwara Pumps",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E149",
+      "source": "vendor_master.csv",
+      "locator": "row 70",
+      "content": "V069 Coastal Enterprises Pvt Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E150",
+      "source": "vendor_master.csv",
+      "locator": "row 71",
+      "content": "V070 Royal Traders Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E151",
+      "source": "vendor_master.csv",
+      "locator": "row 72",
+      "content": "V071 Green Valley Pumps",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E152",
+      "source": "vendor_master.csv",
+      "locator": "row 73",
+      "content": "V072 Annapurna Transport",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E153",
+      "source": "vendor_master.csv",
+      "locator": "row 74",
+      "content": "V073 Mysore Cold Storage",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E154",
+      "source": "vendor_master.csv",
+      "locator": "row 75",
+      "content": "V074 Balaji Agro",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E155",
+      "source": "vendor_master.csv",
+      "locator": "row 76",
+      "content": "V075 Kodagu Packaging",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E156",
+      "source": "vendor_master.csv",
+      "locator": "row 77",
+      "content": "V076 Mysore Polymers",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E157",
+      "source": "vendor_master.csv",
+      "locator": "row 78",
+      "content": "V077 Coastal Seeds",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E158",
+      "source": "vendor_master.csv",
+      "locator": "row 79",
+      "content": "V078 Karnataka Tools",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E159",
+      "source": "vendor_master.csv",
+      "locator": "row 80",
+      "content": "V079 Royal Polymers",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E160",
+      "source": "vendor_master.csv",
+      "locator": "row 81",
+      "content": "V080 Ganesh Industries",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E161",
+      "source": "vendor_master.csv",
+      "locator": "row 82",
+      "content": "V081 Sunrise Cold Storage Pvt Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E162",
+      "source": "vendor_master.csv",
+      "locator": "row 83",
+      "content": "V082 Srirangapatna Traders",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E163",
+      "source": "vendor_master.csv",
+      "locator": "row 84",
+      "content": "V083 Hampi Feeds",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E164",
+      "source": "vendor_master.csv",
+      "locator": "row 85",
+      "content": "V084 Shree Tools",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E165",
+      "source": "vendor_master.csv",
+      "locator": "row 86",
+      "content": "V085 Royal Chemicals",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E166",
+      "source": "vendor_master.csv",
+      "locator": "row 87",
+      "content": "V086 New Tools",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E167",
+      "source": "vendor_master.csv",
+      "locator": "row 88",
+      "content": "V087 Royal Packaging",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E168",
+      "source": "vendor_master.csv",
+      "locator": "row 89",
+      "content": "V088 Balaji Logistics Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E169",
+      "source": "vendor_master.csv",
+      "locator": "row 90",
+      "content": "V089 Hampi Pumps",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E170",
+      "source": "vendor_master.csv",
+      "locator": "row 91",
+      "content": "V090 Srirangapatna Printers Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E171",
+      "source": "vendor_master.csv",
+      "locator": "row 92",
+      "content": "V091 Southern Printers",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E172",
+      "source": "vendor_master.csv",
+      "locator": "row 93",
+      "content": "V092 Royal Seeds",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E173",
+      "source": "vendor_master.csv",
+      "locator": "row 94",
+      "content": "V093 Vijaya Chemicals",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E174",
+      "source": "vendor_master.csv",
+      "locator": "row 95",
+      "content": "V094 Sunrise Irrigation Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E175",
+      "source": "vendor_master.csv",
+      "locator": "row 96",
+      "content": "V095 Royal Enterprises",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E176",
+      "source": "vendor_master.csv",
+      "locator": "row 97",
+      "content": "V096 Mysore Printers Pvt Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E177",
+      "source": "vendor_master.csv",
+      "locator": "row 98",
+      "content": "V097 Southern Cold Storage",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E178",
+      "source": "vendor_master.csv",
+      "locator": "row 99",
+      "content": "V098 Ganesh Packaging",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E179",
+      "source": "vendor_master.csv",
+      "locator": "row 100",
+      "content": "V099 New Feeds Pvt Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E180",
+      "source": "vendor_master.csv",
+      "locator": "row 101",
+      "content": "V100 Royal Agro Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E181",
+      "source": "vendor_master.csv",
+      "locator": "row 102",
+      "content": "V101 Sahyadri Engineering",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E182",
+      "source": "vendor_master.csv",
+      "locator": "row 103",
+      "content": "V102 Shree Printers",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E183",
+      "source": "vendor_master.csv",
+      "locator": "row 104",
+      "content": "V103 Srirangapatna Chemicals Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E184",
+      "source": "vendor_master.csv",
+      "locator": "row 105",
+      "content": "V104 Srirangapatna Cold Storage",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E185",
+      "source": "vendor_master.csv",
+      "locator": "row 106",
+      "content": "V105 Chamundi Transport",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E186",
+      "source": "vendor_master.csv",
+      "locator": "row 107",
+      "content": "V106 Green Valley Chemicals Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E187",
+      "source": "vendor_master.csv",
+      "locator": "row 108",
+      "content": "V107 Southern Industries Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E188",
+      "source": "vendor_master.csv",
+      "locator": "row 109",
+      "content": "V108 Sri Fertilisers",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E189",
+      "source": "vendor_master.csv",
+      "locator": "row 110",
+      "content": "V109 Annapurna Logistics",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E190",
+      "source": "vendor_master.csv",
+      "locator": "row 111",
+      "content": "V110 Vijaya Pumps Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E191",
+      "source": "vendor_master.csv",
+      "locator": "row 112",
+      "content": "V111 Sahyadri Cold Storage Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E192",
+      "source": "vendor_master.csv",
+      "locator": "row 113",
+      "content": "V112 Kodagu Agro",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E193",
+      "source": "vendor_master.csv",
+      "locator": "row 114",
+      "content": "V113 Chamundi Fertilisers",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E194",
+      "source": "vendor_master.csv",
+      "locator": "row 115",
+      "content": "V114 New Chemicals",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E195",
+      "source": "vendor_master.csv",
+      "locator": "row 116",
+      "content": "V115 Balaji Printers",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E196",
+      "source": "vendor_master.csv",
+      "locator": "row 117",
+      "content": "V116 New Pumps",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E197",
+      "source": "vendor_master.csv",
+      "locator": "row 118",
+      "content": "V117 Hampi Traders",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E198",
+      "source": "vendor_master.csv",
+      "locator": "row 119",
+      "content": "V118 Venkateshwara Engineering",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E199",
+      "source": "vendor_master.csv",
+      "locator": "row 120",
+      "content": "V119 Karnataka Packaging",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E200",
+      "source": "vendor_master.csv",
+      "locator": "row 121",
+      "content": "V120 Annapurna Fertilisers",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E201",
+      "source": "vendor_master.csv",
+      "locator": "row 122",
+      "content": "V121 Balaji Traders",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E202",
+      "source": "vendor_master.csv",
+      "locator": "row 123",
+      "content": "V122 Karnataka Transport",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E203",
+      "source": "vendor_master.csv",
+      "locator": "row 124",
+      "content": "V123 Venkateshwara Feeds Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E204",
+      "source": "vendor_master.csv",
+      "locator": "row 125",
+      "content": "V124 Chamundi Feeds",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E205",
+      "source": "vendor_master.csv",
+      "locator": "row 126",
+      "content": "V125 Chamundi Agro",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E206",
+      "source": "vendor_master.csv",
+      "locator": "row 127",
+      "content": "V126 Annapurna Seeds Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E207",
+      "source": "vendor_master.csv",
+      "locator": "row 128",
+      "content": "V127 Royal Pumps Pvt Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E208",
+      "source": "vendor_master.csv",
+      "locator": "row 129",
+      "content": "V128 Annapurna Pumps",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E209",
+      "source": "vendor_master.csv",
+      "locator": "row 130",
+      "content": "V129 Chamundi Industries",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E210",
+      "source": "vendor_master.csv",
+      "locator": "row 131",
+      "content": "V130 Balaji Engineering",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E211",
+      "source": "vendor_master.csv",
+      "locator": "row 132",
+      "content": "V131 Sunrise Printers Pvt Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E212",
+      "source": "vendor_master.csv",
+      "locator": "row 133",
+      "content": "V132 Karnataka Logistics",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E213",
+      "source": "vendor_master.csv",
+      "locator": "row 134",
+      "content": "V133 Mysore Engineering",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E214",
+      "source": "vendor_master.csv",
+      "locator": "row 135",
+      "content": "V134 Shree Fertilisers",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E215",
+      "source": "vendor_master.csv",
+      "locator": "row 136",
+      "content": "V135 Chamundi Irrigation",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E216",
+      "source": "vendor_master.csv",
+      "locator": "row 137",
+      "content": "V136 Coastal Enterprises",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E217",
+      "source": "vendor_master.csv",
+      "locator": "row 138",
+      "content": "V137 Ganesh Packaging Pvt Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E218",
+      "source": "vendor_master.csv",
+      "locator": "row 139",
+      "content": "V138 Vijaya Enterprises Pvt Ltd",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E219",
+      "source": "vendor_master.csv",
+      "locator": "row 140",
+      "content": "V139 Sahyadri Chemicals",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E220",
+      "source": "vendor_master.csv",
+      "locator": "row 141",
+      "content": "V140 Annapurna Cold Storage",
+      "sha256": "70afc86b1d108f04",
+      "kind": "client_master",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E221",
+      "source": "computed by resolver",
+      "locator": "G:AAGCK1010B <-> M:2",
+      "content": "pan AAGCK1010B",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E222",
+      "source": "computed by resolver",
+      "locator": "G:AAGCK1010B <-> V014",
+      "content": "pan AAGCK1010B",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E223",
+      "source": "computed by resolver",
+      "locator": "M:2 <-> V014",
+      "content": "pan AAGCK1010B",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E224",
+      "source": "computed by resolver",
+      "locator": "G:AAGCK1010B <-> CIN:U15400KA2012PTC063311",
+      "content": "cin U15400KA2012PTC063311",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E225",
+      "source": "computed by resolver",
+      "locator": "G:AAGCK1010B <-> M:2",
+      "content": "cname kaveri foods private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E226",
+      "source": "computed by resolver",
+      "locator": "G:AAGCK1010B <-> I:D2_lakshmi_iyer:1",
+      "content": "cname kaveri foods private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E227",
+      "source": "computed by resolver",
+      "locator": "G:AAGCK1010B <-> CIN:U15400KA2012PTC063311",
+      "content": "cname kaveri foods private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E228",
+      "source": "computed by resolver",
+      "locator": "G:AAGCK1010B <-> PY:1",
+      "content": "cname kaveri foods private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E229",
+      "source": "computed by resolver",
+      "locator": "G:AAGCK1010B <-> V014",
+      "content": "cname kaveri foods private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E230",
+      "source": "computed by resolver",
+      "locator": "M:2 <-> I:D2_lakshmi_iyer:1",
+      "content": "cname kaveri foods private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E231",
+      "source": "computed by resolver",
+      "locator": "M:2 <-> CIN:U15400KA2012PTC063311",
+      "content": "cname kaveri foods private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E232",
+      "source": "computed by resolver",
+      "locator": "M:2 <-> PY:1",
+      "content": "cname kaveri foods private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E233",
+      "source": "computed by resolver",
+      "locator": "M:2 <-> V014",
+      "content": "cname kaveri foods private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E234",
+      "source": "computed by resolver",
+      "locator": "I:D2_lakshmi_iyer:1 <-> CIN:U15400KA2012PTC063311",
+      "content": "cname kaveri foods private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E235",
+      "source": "computed by resolver",
+      "locator": "I:D2_lakshmi_iyer:1 <-> PY:1",
+      "content": "cname kaveri foods private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E236",
+      "source": "computed by resolver",
+      "locator": "I:D2_lakshmi_iyer:1 <-> V014",
+      "content": "cname kaveri foods private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E237",
+      "source": "computed by resolver",
+      "locator": "CIN:U15400KA2012PTC063311 <-> PY:1",
+      "content": "cname kaveri foods private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E238",
+      "source": "computed by resolver",
+      "locator": "CIN:U15400KA2012PTC063311 <-> V014",
+      "content": "cname kaveri foods private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E239",
+      "source": "computed by resolver",
+      "locator": "PY:1 <-> V014",
+      "content": "cname kaveri foods private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E240",
+      "source": "computed by resolver",
+      "locator": "G:AAGCK2020C <-> M:3",
+      "content": "pan AAGCK2020C",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E241",
+      "source": "computed by resolver",
+      "locator": "G:AAGCK2020C <-> V015",
+      "content": "pan AAGCK2020C",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E242",
+      "source": "computed by resolver",
+      "locator": "M:3 <-> V015",
+      "content": "pan AAGCK2020C",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E243",
+      "source": "computed by resolver",
+      "locator": "G:AAGCK2020C <-> M:3",
+      "content": "cname kaveri exports private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E244",
+      "source": "computed by resolver",
+      "locator": "G:AAGCK2020C <-> PY:2",
+      "content": "cname kaveri exports private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E245",
+      "source": "computed by resolver",
+      "locator": "G:AAGCK2020C <-> V015",
+      "content": "cname kaveri exports private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E246",
+      "source": "computed by resolver",
+      "locator": "M:3 <-> PY:2",
+      "content": "cname kaveri exports private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E247",
+      "source": "computed by resolver",
+      "locator": "M:3 <-> V015",
+      "content": "cname kaveri exports private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E248",
+      "source": "computed by resolver",
+      "locator": "PY:2 <-> V015",
+      "content": "cname kaveri exports private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E249",
+      "source": "computed by resolver",
+      "locator": "R:D1 <-> M:4",
+      "content": "pan ABKPK4521M",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E250",
+      "source": "computed by resolver",
+      "locator": "R:D1 <-> DIN:01234567",
+      "content": "din 01234567",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E251",
+      "source": "computed by resolver",
+      "locator": "R:D1 <-> M:4",
+      "content": "exact name 'Ramesh Kumar Krishnan'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E252",
+      "source": "computed by resolver",
+      "locator": "R:D1 <-> DIN:01234567",
+      "content": "exact name 'Ramesh Kumar Krishnan'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E253",
+      "source": "computed by resolver",
+      "locator": "R:D1 <-> PY:3",
+      "content": "exact name 'Ramesh Kumar Krishnan'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E254",
+      "source": "computed by resolver",
+      "locator": "M:4 <-> DIN:01234567",
+      "content": "exact name 'Ramesh Kumar Krishnan'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E255",
+      "source": "computed by resolver",
+      "locator": "M:4 <-> PY:3",
+      "content": "exact name 'Ramesh Kumar Krishnan'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E256",
+      "source": "computed by resolver",
+      "locator": "DIN:01234567 <-> PY:3",
+      "content": "exact name 'Ramesh Kumar Krishnan'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E257",
+      "source": "computed by resolver",
+      "locator": "R:D2 <-> M:5",
+      "content": "pan ACLPI3344D",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E258",
+      "source": "computed by resolver",
+      "locator": "R:D2 <-> DIN:02345678",
+      "content": "din 02345678",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E259",
+      "source": "computed by resolver",
+      "locator": "R:D2 <-> M:5",
+      "content": "exact name 'Lakshmi Narayanan Iyer'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E260",
+      "source": "computed by resolver",
+      "locator": "R:D2 <-> DIN:02345678",
+      "content": "exact name 'Lakshmi Narayanan Iyer'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E261",
+      "source": "computed by resolver",
+      "locator": "R:D2 <-> PY:4",
+      "content": "exact name 'Lakshmi Narayanan Iyer'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E262",
+      "source": "computed by resolver",
+      "locator": "M:5 <-> DIN:02345678",
+      "content": "exact name 'Lakshmi Narayanan Iyer'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E263",
+      "source": "computed by resolver",
+      "locator": "M:5 <-> PY:4",
+      "content": "exact name 'Lakshmi Narayanan Iyer'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E264",
+      "source": "computed by resolver",
+      "locator": "DIN:02345678 <-> PY:4",
+      "content": "exact name 'Lakshmi Narayanan Iyer'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E265",
+      "source": "computed by resolver",
+      "locator": "R:D3 <-> M:8",
+      "content": "pan AGHPS7012B",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E266",
+      "source": "computed by resolver",
+      "locator": "R:D3 <-> DIN:03456789",
+      "content": "din 03456789",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E267",
+      "source": "computed by resolver",
+      "locator": "R:D3 <-> M:8",
+      "content": "exact name 'Arvind Shetty'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E268",
+      "source": "computed by resolver",
+      "locator": "R:D3 <-> DIN:03456789",
+      "content": "exact name 'Arvind Shetty'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E269",
+      "source": "computed by resolver",
+      "locator": "R:D3 <-> PY:7",
+      "content": "exact name 'Arvind Shetty'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E270",
+      "source": "computed by resolver",
+      "locator": "M:8 <-> DIN:03456789",
+      "content": "exact name 'Arvind Shetty'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E271",
+      "source": "computed by resolver",
+      "locator": "M:8 <-> PY:7",
+      "content": "exact name 'Arvind Shetty'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E272",
+      "source": "computed by resolver",
+      "locator": "DIN:03456789 <-> PY:7",
+      "content": "exact name 'Arvind Shetty'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E273",
+      "source": "computed by resolver",
+      "locator": "R:D4 <-> M:9",
+      "content": "pan AEMPH1188N",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E274",
+      "source": "computed by resolver",
+      "locator": "R:D4 <-> DIN:04567890",
+      "content": "din 04567890",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E275",
+      "source": "computed by resolver",
+      "locator": "R:D4 <-> M:9",
+      "content": "exact name 'Meera Hegde'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E276",
+      "source": "computed by resolver",
+      "locator": "R:D4 <-> DIN:04567890",
+      "content": "exact name 'Meera Hegde'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E277",
+      "source": "computed by resolver",
+      "locator": "R:D4 <-> PY:8",
+      "content": "exact name 'Meera Hegde'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E278",
+      "source": "computed by resolver",
+      "locator": "M:9 <-> DIN:04567890",
+      "content": "exact name 'Meera Hegde'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E279",
+      "source": "computed by resolver",
+      "locator": "M:9 <-> PY:8",
+      "content": "exact name 'Meera Hegde'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E280",
+      "source": "computed by resolver",
+      "locator": "DIN:04567890 <-> PY:8",
+      "content": "exact name 'Meera Hegde'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E281",
+      "source": "computed by resolver",
+      "locator": "R:D5 <-> DIN:05678901",
+      "content": "din 05678901",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E282",
+      "source": "computed by resolver",
+      "locator": "R:D5 <-> DIN:05678901",
+      "content": "exact name 'Sanjay Gowda'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E283",
+      "source": "computed by resolver",
+      "locator": "R:D5 <-> PY:9",
+      "content": "exact name 'Sanjay Gowda'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E284",
+      "source": "computed by resolver",
+      "locator": "DIN:05678901 <-> PY:9",
+      "content": "exact name 'Sanjay Gowda'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E285",
+      "source": "computed by resolver",
+      "locator": "R:D6 <-> M:10",
+      "content": "pan BFSPS9087A",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E286",
+      "source": "computed by resolver",
+      "locator": "R:D6 <-> DIN:06789012",
+      "content": "din 06789012",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E287",
+      "source": "computed by resolver",
+      "locator": "R:D6 <-> M:10",
+      "content": "exact name 'Farah Siddiqui'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E288",
+      "source": "computed by resolver",
+      "locator": "R:D6 <-> DIN:06789012",
+      "content": "exact name 'Farah Siddiqui'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E289",
+      "source": "computed by resolver",
+      "locator": "R:D6 <-> PY:10",
+      "content": "exact name 'Farah Siddiqui'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E290",
+      "source": "computed by resolver",
+      "locator": "M:10 <-> DIN:06789012",
+      "content": "exact name 'Farah Siddiqui'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E291",
+      "source": "computed by resolver",
+      "locator": "M:10 <-> PY:10",
+      "content": "exact name 'Farah Siddiqui'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E292",
+      "source": "computed by resolver",
+      "locator": "DIN:06789012 <-> PY:10",
+      "content": "exact name 'Farah Siddiqui'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E293",
+      "source": "computed by resolver",
+      "locator": "R:K1 <-> M:6",
+      "content": "pan AIXPM6620G",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E294",
+      "source": "computed by resolver",
+      "locator": "R:K1 <-> V007",
+      "content": "bank 50100234567812@HDFC0001234",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E295",
+      "source": "computed by resolver",
+      "locator": "R:K1 <-> M:6",
+      "content": "exact name 'Prakash Menon'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E296",
+      "source": "computed by resolver",
+      "locator": "R:K1 <-> PY:5",
+      "content": "exact name 'Prakash Menon'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E297",
+      "source": "computed by resolver",
+      "locator": "M:6 <-> PY:5",
+      "content": "exact name 'Prakash Menon'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E298",
+      "source": "computed by resolver",
+      "locator": "R:K2 <-> M:7",
+      "content": "pan BDRPR2290K",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E299",
+      "source": "computed by resolver",
+      "locator": "R:K2 <-> M:7",
+      "content": "exact name 'Divya Rao'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E300",
+      "source": "computed by resolver",
+      "locator": "R:K2 <-> PY:6",
+      "content": "exact name 'Divya Rao'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E301",
+      "source": "computed by resolver",
+      "locator": "M:7 <-> PY:6",
+      "content": "exact name 'Divya Rao'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E302",
+      "source": "computed by resolver",
+      "locator": "M:2 <-> PY:1",
+      "content": "exact name 'Kaveri Foods Private Limited'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E303",
+      "source": "computed by resolver",
+      "locator": "M:3 <-> PY:2",
+      "content": "exact name 'Kaveri Exports Private Limited'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E304",
+      "source": "computed by resolver",
+      "locator": "M:11 <-> REL:D1_ramesh_krishnan:2",
+      "content": "pan BKXPR7781L",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E305",
+      "source": "computed by resolver",
+      "locator": "M:11 <-> REL:D1_ramesh_krishnan:2",
+      "content": "exact name 'Karthik Ramesh'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E306",
+      "source": "computed by resolver",
+      "locator": "M:11 <-> DIN:08456123",
+      "content": "exact name 'Karthik Ramesh'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E307",
+      "source": "computed by resolver",
+      "locator": "M:11 <-> PY:11",
+      "content": "exact name 'Karthik Ramesh'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E308",
+      "source": "computed by resolver",
+      "locator": "REL:D1_ramesh_krishnan:2 <-> DIN:08456123",
+      "content": "exact name 'Karthik Ramesh'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E309",
+      "source": "computed by resolver",
+      "locator": "REL:D1_ramesh_krishnan:2 <-> PY:11",
+      "content": "exact name 'Karthik Ramesh'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E310",
+      "source": "computed by resolver",
+      "locator": "DIN:08456123 <-> PY:11",
+      "content": "exact name 'Karthik Ramesh'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E311",
+      "source": "computed by resolver",
+      "locator": "M:12 <-> I:D1_ramesh_krishnan:1",
+      "content": "pan AAHFB2231C",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E312",
+      "source": "computed by resolver",
+      "locator": "M:12 <-> V013",
+      "content": "pan AAHFB2231C",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E313",
+      "source": "computed by resolver",
+      "locator": "I:D1_ramesh_krishnan:1 <-> V013",
+      "content": "pan AAHFB2231C",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E314",
+      "source": "computed by resolver",
+      "locator": "M:12 <-> PY:12",
+      "content": "exact name 'Bhavani Holdings & Co'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E315",
+      "source": "computed by resolver",
+      "locator": "M:13 <-> I:D3_arvind_shetty:1",
+      "content": "pan AAECT9090J",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E316",
+      "source": "computed by resolver",
+      "locator": "M:13 <-> V012",
+      "content": "pan AAECT9090J",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E317",
+      "source": "computed by resolver",
+      "locator": "I:D3_arvind_shetty:1 <-> V012",
+      "content": "pan AAECT9090J",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E318",
+      "source": "computed by resolver",
+      "locator": "M:13 <-> I:D3_arvind_shetty:1",
+      "content": "cname tunga agri inputs private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E319",
+      "source": "computed by resolver",
+      "locator": "M:13 <-> CIN:U01403KA2016PTC095551",
+      "content": "cname tunga agri inputs private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E320",
+      "source": "computed by resolver",
+      "locator": "M:13 <-> PY:13",
+      "content": "cname tunga agri inputs private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E321",
+      "source": "computed by resolver",
+      "locator": "M:13 <-> V012",
+      "content": "cname tunga agri inputs private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E322",
+      "source": "computed by resolver",
+      "locator": "I:D3_arvind_shetty:1 <-> CIN:U01403KA2016PTC095551",
+      "content": "cname tunga agri inputs private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E323",
+      "source": "computed by resolver",
+      "locator": "I:D3_arvind_shetty:1 <-> PY:13",
+      "content": "cname tunga agri inputs private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E324",
+      "source": "computed by resolver",
+      "locator": "I:D3_arvind_shetty:1 <-> V012",
+      "content": "cname tunga agri inputs private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E325",
+      "source": "computed by resolver",
+      "locator": "CIN:U01403KA2016PTC095551 <-> PY:13",
+      "content": "cname tunga agri inputs private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E326",
+      "source": "computed by resolver",
+      "locator": "CIN:U01403KA2016PTC095551 <-> V012",
+      "content": "cname tunga agri inputs private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E327",
+      "source": "computed by resolver",
+      "locator": "PY:13 <-> V012",
+      "content": "cname tunga agri inputs private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E328",
+      "source": "computed by resolver",
+      "locator": "M:13 <-> PY:13",
+      "content": "exact name 'Tunga Agri Inputs Private Limited'",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E329",
+      "source": "computed by resolver",
+      "locator": "REL:D1_ramesh_krishnan:2 <-> DIN:08456123",
+      "content": "din 08456123",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E330",
+      "source": "computed by resolver",
+      "locator": "REL:D2_lakshmi_iyer:2 <-> V009",
+      "content": "pan AFRPR6610K",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E331",
+      "source": "computed by resolver",
+      "locator": "I:D3_arvind_shetty:2 <-> V004",
+      "content": "pan AAJFS4321K",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E332",
+      "source": "computed by resolver",
+      "locator": "I:D4_meera_hegde_scan:1 <-> V005",
+      "content": "pan AAICM5018Q",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E333",
+      "source": "computed by resolver",
+      "locator": "I:D4_meera_hegde_scan:2 <-> CIN:U01119KA2003PLC032323",
+      "content": "cname western ghats agro limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E334",
+      "source": "computed by resolver",
+      "locator": "I:D4_meera_hegde_scan:2 <-> V017",
+      "content": "cname western ghats agro limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E335",
+      "source": "computed by resolver",
+      "locator": "CIN:U01119KA2003PLC032323 <-> V017",
+      "content": "cname western ghats agro limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E336",
+      "source": "computed by resolver",
+      "locator": "I:D6_farah_siddiqui:1 <-> CIN:U01119TG2001PLC036969",
+      "content": "cname deccan seeds limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E337",
+      "source": "computed by resolver",
+      "locator": "I:D6_farah_siddiqui:1 <-> V006",
+      "content": "cname deccan seeds limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E338",
+      "source": "computed by resolver",
+      "locator": "CIN:U01119TG2001PLC036969 <-> V006",
+      "content": "cname deccan seeds limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E339",
+      "source": "computed by resolver",
+      "locator": "CIN:U63090KA2019PTC121212 <-> PY:14",
+      "content": "cname cauvery cold chain private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E340",
+      "source": "computed by resolver",
+      "locator": "CIN:U63090KA2019PTC121212 <-> V003",
+      "content": "cname cauvery cold chain private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E341",
+      "source": "computed by resolver",
+      "locator": "PY:14 <-> V003",
+      "content": "cname cauvery cold chain private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E342",
+      "source": "computed by resolver",
+      "locator": "CIN:U01110KA2020PTC131313 <-> V005",
+      "content": "cname malnad agritech private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E343",
+      "source": "computed by resolver",
+      "locator": "CIN:U45200KA2017PTC104040 <-> V016",
+      "content": "cname hemavathi infra private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E344",
+      "source": "computed by resolver",
+      "locator": "CIN:U60231KA2015PTC081234 <-> V001",
+      "content": "cname nandi logistics private limited",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E345",
+      "source": "computed by resolver",
+      "locator": "V001 <-> V002",
+      "content": "pan AACCN1234F",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E346",
+      "source": "computed by resolver",
+      "locator": "V001 <-> V002",
+      "content": "bank 1102003300441@SBIN0040001",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E347",
+      "source": "computed by resolver",
+      "locator": "V010 <-> V013",
+      "content": "same bank but different PAN",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E348",
+      "source": "computed by resolver",
+      "locator": "V008 <-> R:D1",
+      "content": "no model configured: abstained, routed to human",
+      "sha256": "-",
+      "kind": "resolution",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    },
+    {
+      "id": "E349",
+      "source": "board_minutes_2025-08-12.txt",
+      "locator": "line 3",
+      "content": "Item 7: The Board noted purchases of packing material aggregating Rs 18 lakh during Q1 from M/s Sri K Ramesh Traders, a proprietary concern of the Chairman and Managing Director. The Chairman did not participate in this item.",
+      "sha256": "8d2c558a34b129a8",
+      "kind": "minutes",
+      "retrieved_on": "",
+      "ttl_days": null,
+      "extra": {}
+    }
+  ]
+}
